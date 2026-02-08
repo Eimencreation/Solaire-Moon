@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solaire Moon - Nettoyage Professionnel de Panneaux Solaires</title>
+    <title>Solaire Moon - Nettoyage Professionnel</title>
     <style>
         * {
             margin: 0;
@@ -18,7 +18,6 @@
             line-height: 1.6;
         }
 
-        /* Header avec effet parallaxe */
         header {
             background: linear-gradient(135deg, #0A1628 0%, #1a2642 50%, #4DB8E8 100%);
             padding: 2rem 0;
@@ -44,82 +43,96 @@
             100% { transform: rotate(360deg); }
         }
 
-        .logo {
-            font-size: 3rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #4DB8E8, #F4B942);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .logo-container {
             position: relative;
-            z-index: 1;
-            text-shadow: 0 0 30px rgba(77, 184, 232, 0.5);
+            z-index: 10;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            background: #0A1628;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(77, 184, 232, 0.5);
+            position: relative;
+        }
+
+        .logo::before {
+            content: '☀️';
+            font-size: 40px;
+            position: absolute;
+            left: 15px;
+            animation: pulse 3s ease-in-out infinite;
         }
 
         .logo::after {
             content: '🌙';
-            margin-left: 10px;
-            animation: pulse 2s ease-in-out infinite;
+            font-size: 40px;
+            position: absolute;
+            right: 15px;
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .logo h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #4DB8E8 0%, #F4B942 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 10;
+            text-shadow: 0 0 20px rgba(77, 184, 232, 0.5);
         }
 
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #F4B942;
             margin-top: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
             position: relative;
-            z-index: 1;
+            z-index: 10;
         }
 
         nav {
-            background: rgba(10, 22, 40, 0.95);
+            background: rgba(10, 22, 40, 0.9);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(77, 184, 232, 0.2);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: #4DB8E8;
+            color: #E8F1F5;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            position: relative;
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #F4B942;
-            transition: width 0.3s ease;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 500;
         }
 
         nav a:hover {
-            color: #F4B942;
+            background: linear-gradient(135deg, #4DB8E8, #F4B942);
             transform: translateY(-2px);
-        }
-
-        nav a:hover::before {
-            width: 100%;
+            box-shadow: 0 5px 15px rgba(77, 184, 232, 0.4);
         }
 
         .container {
@@ -128,219 +141,185 @@
             padding: 2rem;
         }
 
-        section {
-            margin: 4rem 0;
-            padding: 2rem;
-            background: rgba(26, 38, 66, 0.6);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(77, 184, 232, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(77, 184, 232, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(77, 184, 232, 0.2);
-        }
-
-        h2 {
-            color: #4DB8E8;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+        .hero {
             text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.8), rgba(77, 184, 232, 0.2));
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, #4DB8E8, #F4B942);
-            border-radius: 2px;
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #4DB8E8;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #E8F1F5;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #F4B942, #4DB8E8);
+            color: #0A1628;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(244, 185, 66, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(244, 185, 66, 0.6);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin: 3rem 0;
         }
 
         .service-card {
-            background: rgba(10, 22, 40, 0.8);
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.9), rgba(77, 184, 232, 0.1));
             padding: 2rem;
-            border-radius: 10px;
-            border: 2px solid #4DB8E8;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(77, 184, 232, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            border-color: #F4B942;
-            box-shadow: 0 10px 30px rgba(244, 185, 66, 0.3);
+            border-color: #4DB8E8;
+            box-shadow: 0 10px 30px rgba(77, 184, 232, 0.3);
         }
 
         .service-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            display: block;
-            text-align: center;
         }
 
         .service-card h3 {
-            color: #F4B942;
+            color: #4DB8E8;
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            text-align: center;
         }
 
-        .service-card p {
-            color: #E8F1F5;
-            line-height: 1.8;
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #F4B942;
+            margin: 3rem 0 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #4DB8E8, #F4B942);
+            margin: 1rem auto;
+            border-radius: 2px;
         }
 
         .contact-form {
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.9), rgba(77, 184, 232, 0.1));
+            padding: 3rem;
+            border-radius: 20px;
             max-width: 600px;
             margin: 2rem auto;
-            padding: 2rem;
-            background: rgba(10, 22, 40, 0.8);
-            border-radius: 10px;
-            border: 2px solid #4DB8E8;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
         .form-group {
             margin-bottom: 1.5rem;
         }
 
-        label {
+        .form-group label {
             display: block;
             color: #4DB8E8;
-            font-weight: 600;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        input, textarea, select {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 1rem;
-            background: rgba(26, 38, 66, 0.8);
+            border-radius: 10px;
             border: 2px solid #4DB8E8;
-            border-radius: 8px;
+            background: rgba(10, 22, 40, 0.8);
             color: #E8F1F5;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
-        input:focus, textarea:focus, select:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: #F4B942;
-            box-shadow: 0 0 10px rgba(244, 185, 66, 0.3);
+            box-shadow: 0 0 15px rgba(244, 185, 66, 0.3);
         }
 
-        button {
+        .contact-form button {
             width: 100%;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #4DB8E8, #F4B942);
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #F4B942, #4DB8E8);
             color: #0A1628;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: all 0.3s;
         }
 
-        button:hover {
+        .contact-form button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(244, 185, 66, 0.4);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(10, 22, 40, 0.6);
-            border-radius: 10px;
-            border: 1px solid #4DB8E8;
-            transition: all 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: scale(1.05);
-            border-color: #F4B942;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            box-shadow: 0 8px 30px rgba(244, 185, 66, 0.6);
         }
 
         footer {
-            background: rgba(10, 22, 40, 0.95);
+            background: #0A1628;
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
-            border-top: 2px solid #4DB8E8;
-        }
-
-        footer p {
-            color: #E8F1F5;
+            border-top: 3px solid #4DB8E8;
         }
 
         @media (max-width: 768px) {
-            .logo {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            h2 {
+            .hero h2 {
                 font-size: 1.8rem;
             }
 
-            .services-grid, .features {
+            .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="logo-container">
+            <div class="logo"></div>
+        </div>
         <h1 class="logo">SOLAIRE MOON</h1>
-        <p class="tagline">Nettoyage Professionnel de Panneaux Solaires & Services Premium</p>
+        <p class="tagline">Nettoyage Professionnel</p>
     </header>
 
     <nav>
@@ -353,139 +332,81 @@
     </nav>
 
     <div class="container">
-        <section id="accueil">
-            <h2>Optimisez la Performance de Vos Panneaux Solaires</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-top: 1rem;">
-                🌙 Spécialiste du nettoyage professionnel de panneaux solaires et services d'entretien premium. 
-                Nous redonnons à vos installations leur efficacité maximale tout en proposant une gamme complète 
-                de services de nettoyage pour particuliers et professionnels.
-            </p>
-
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">☀️</div>
-                    <h3>+25% de Rendement</h3>
-                    <p>Des panneaux propres = plus d'énergie produite</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <h3>100% Sécurisé</h3>
-                    <p>Équipement professionnel et assurance complète</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🌱</div>
-                    <h3>Éco-Responsable</h3>
-                    <p>Produits biodégradables et techniques douces</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💰</div>
-                    <h3>Tarifs Compétitifs</h3>
-                    <p>Devis gratuit et prix transparents</p>
-                </div>
-            </div>
+        <section id="accueil" class="hero">
+            <h2>Services de Nettoyage Professionnels</h2>
+            <p>Spécialistes du nettoyage de panneaux solaires et entretien tous espaces</p>
+            <a href="#contact" class="cta-button">📞 Demandez un Devis Gratuit</a>
         </section>
 
         <section id="services">
-            <h2>Nos Services</h2>
+            <h2 class="section-title">Nos Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <span class="service-icon">☀️</span>
+                    <div class="service-icon">☀️</div>
                     <h3>Nettoyage de Panneaux Solaires</h3>
-                    <p>Service spécialisé pour optimiser le rendement de vos installations photovoltaïques. 
-                    Nettoyage en profondeur avec matériel adapté et produits spécifiques non abrasifs.</p>
+                    <p>Optimisez le rendement de vos installations avec un nettoyage professionnel (+25% d'efficacité)</p>
                 </div>
 
                 <div class="service-card">
-                    <span class="service-icon">🏗️</span>
-                    <h3>Nettoyage de Fin de Chantier</h3>
-                    <p>Remise en état impeccable après travaux. Élimination des poussières, résidus de ciment, 
-                    taches de peinture et protection des surfaces neuves.</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">🏠</span>
-                    <h3>État des Lieux</h3>
-                    <p>Nettoyage complet pour états des lieux d'entrée ou de sortie. Garantie d'un logement 
-                    impeccable conforme aux exigences des propriétaires.</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">🏢</span>
-                    <h3>Entretien Bureaux & Locaux</h3>
-                    <p>Service régulier ou ponctuel pour maintenir vos espaces professionnels propres et accueillants. 
-                    Intervention discrète en dehors des heures d'ouverture possible.</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">🏥</span>
-                    <h3>Cabinets Médicaux</h3>
-                    <p>Nettoyage et désinfection selon protocoles stricts d'hygiène médicale. 
-                    Respect des normes sanitaires en vigueur.</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">💼</span>
+                    <div class="service-icon">🏢</div>
                     <h3>Nettoyage de Bureaux</h3>
-                    <p>Entretien quotidien ou hebdomadaire de vos espaces de travail. 
-                    Un environnement propre pour des équipes productives.</p>
+                    <p>Entretien régulier de vos espaces professionnels pour un environnement sain</p>
                 </div>
-            </div>
-        </section>
 
-        <section id="avantages">
-            <h2>Pourquoi Choisir Solaire Moon ?</h2>
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">⭐</div>
-                    <h3>Expertise</h3>
-                    <p>10 ans d'expérience dans le nettoyage professionnel</p>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Entretien de Logements</h3>
+                    <p>Nettoyage complet de maisons, appartements et résidences</p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Rapidité</h3>
-                    <p>Intervention rapide sous 48h</p>
+
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Fin de Chantier</h3>
+                    <p>Nettoyage post-travaux pour une remise en état impeccable</p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Qualité</h3>
-                    <p>Résultats garantis ou re-nettoyage gratuit</p>
+
+                <div class="service-card">
+                    <div class="service-icon">🔑</div>
+                    <h3>État des Lieux</h3>
+                    <p>Nettoyage approfondi pour entrées et sorties de location</p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">📱</div>
-                    <h3>Disponibilité</h3>
-                    <p>7j/7 pour urgences et devis</p>
+
+                <div class="service-card">
+                    <div class="service-icon">⚕️</div>
+                    <h3>Cabinets Médicaux</h3>
+                    <p>Désinfection selon normes sanitaires strictes</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Demandez Votre Devis Gratuit</h2>
+            <h2 class="section-title">Demandez Votre Devis Gratuit</h2>
             <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-group">
-                    <label for="nom">Nom complet *</label>
-                    <input type="text" id="nom" name="nom" required>
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="votre@email.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="telephone">Téléphone *</label>
-                    <input type="tel" id="telephone" name="telephone" required>
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+41 XX XXX XX XX">
                 </div>
 
                 <div class="form-group">
-                    <label for="service">Service souhaité *</label>
+                    <label for="service">Service demandé</label>
                     <select id="service" name="service" required>
-                        <option value="">-- Sélectionnez un service --</option>
+                        <option value="">-- Choisissez un service --</option>
                         <option value="panneaux">Nettoyage de panneaux solaires</option>
-                        <option value="chantier">Nettoyage de fin de chantier</option>
-                        <option value="etat">État des lieux</option>
-                        <option value="bureaux">Entretien bureaux & locaux</option>
-                        <option value="medical">Cabinet médical</option>
                         <option value="bureau">Nettoyage de bureaux</option>
+                        <option value="logement">Entretien de logement</option>
+                        <option value="chantier">Fin de chantier</option>
+                        <option value="etat">État des lieux</option>
+                        <option value="medical">Cabinet médical</option>
                     </select>
                 </div>
 
@@ -499,10 +420,10 @@
 
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="font-size: 1.2rem; color: #4DB8E8;">
-                    📞 <strong>Urgence ?</strong> Appelez-nous au : <span style="color: #F4B942;">06 XX XX XX XX</span>
+                    📞 <strong>Urgence ?</strong> Appelez-nous au : <span style="color: #F4B942;">+41 76 819 10 40</span>
                 </p>
                 <p style="margin-top: 1rem;">
-                    📧 Email : <span style="color: #4DB8E8;">contact@solairemoon.fr</span>
+                    📧 Email : <span style="color: #4DB8E8;">info.solairemoon@gmail.com</span>
                 </p>
             </div>
         </section>
@@ -510,7 +431,8 @@
 
     <footer>
         <p>🌙 © 2024 Solaire Moon - Nettoyage Professionnel | Tous droits réservés</p>
-        <p style="margin-top: 0.5rem; color: #4DB8E8;">SIRET : XXX XXX XXX XXXXX | Assurance RC Pro</p>
+        <p style="margin-top: 0.5rem; color: #4DB8E8;">Services en Suisse | Devis gratuit</p>
     </footer>
 </body>
 </html>
+
