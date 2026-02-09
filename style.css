@@ -5,11 +5,115 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #ffffff;
     background: linear-gradient(135deg, #0f2847 0%, #1e4d7b 50%, #4DB8E8 100%);
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* BUBBLES ANIMATION */
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: rise 15s infinite ease-in;
+}
+
+.bubble:nth-child(1) {
+    width: 20px;
+    height: 20px;
+    left: 10%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    left: 20%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 35px;
+    height: 35px;
+    left: 50%;
+    animation-duration: 14s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(5) {
+    width: 45px;
+    height: 45px;
+    left: 65%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(6) {
+    width: 25px;
+    height: 25px;
+    left: 75%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(7) {
+    width: 55px;
+    height: 55px;
+    left: 85%;
+    animation-duration: 13s;
+    animation-delay: 5s;
+}
+
+.bubble:nth-child(8) {
+    width: 30px;
+    height: 30px;
+    left: 95%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        transform: translateX(0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateX(50px) scale(1.2);
+        opacity: 0.4;
+    }
+    100% {
+        bottom: 120%;
+        transform: translateX(-50px) scale(0.8);
+        opacity: 0;
+    }
 }
 
 /* HEADER */
@@ -41,10 +145,11 @@ header {
     width: auto;
 }
 
-.logo h1 {
-    font-size: 1.8rem;
-    color: #ffffff;
-    font-weight: 700;
+.logo-text {
+    font-family: 'Allura', cursive;
+    font-size: 2.5rem;
+    color: #FDB750;
+    font-weight: 400;
     letter-spacing: 2px;
 }
 
@@ -57,7 +162,7 @@ header {
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.1rem;
     transition: color 0.3s;
 }
@@ -98,6 +203,7 @@ header {
 
 /* HERO */
 .hero {
+    position: relative;
     text-align: center;
     padding: 6rem 2rem;
     background: linear-gradient(135deg, #0f2847 0%, #1e4d7b 50%, #4DB8E8 100%);
@@ -107,35 +213,41 @@ header {
     height: 120px;
     margin-bottom: 2rem;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+    position: relative;
+    z-index: 2;
 }
 
 .hero-title {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
-    font-weight: 800;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    letter-spacing: 3px;
+    font-family: 'Allura', cursive;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #FDB750 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-subtitle {
     font-size: 2rem;
-    color: #FDB750;
+    color: #ffffff;
     margin-bottom: 2rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 5px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-description {
     font-size: 1.3rem;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto 3rem auto;
     color: #ffffff;
     line-height: 1.8;
-}
-
-.highlight {
-    color: #FDB750;
-    font-weight: 700;
+    position: relative;
+    z-index: 2;
 }
 
 .btn-primary {
@@ -149,6 +261,8 @@ header {
     font-weight: 700;
     transition: all 0.3s;
     box-shadow: 0 8px 25px rgba(253, 183, 80, 0.4);
+    position: relative;
+    z-index: 2;
 }
 
 .btn-primary:hover {
@@ -156,82 +270,89 @@ header {
     box-shadow: 0 12px 35px rgba(253, 183, 80, 0.6);
 }
 
-/* WELCOME */
-.welcome {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 3rem 2rem;
-    text-align: center;
-    max-width: 1000px;
-    margin: 3rem auto;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-}
-
-.welcome h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #FDB750;
-}
-
-.welcome p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
-
-/* SERVICES */
-.services {
+/* SERVICES VISUAL */
+.services-visual {
+    position: relative;
     padding: 4rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.services h2 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: #ffffff;
-}
-
-.services-grid {
+.services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
 }
 
-.service-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2.5rem;
-    border-radius: 20px;
-    text-align: center;
-    transition: all 0.3s;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.15);
+.service-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 50%;
+    border: 10px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-.service-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.service-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: #FDB750;
-}
-
-.service-card p {
-    font-size: 1.1rem;
+.services-right h2 {
+    font-size: 2.5rem;
     color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    font-size: 1.2rem;
+}
+
+.check-icon {
+    background: #4DB8E8;
+    color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.services-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.bottom-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* AVANTAGES */
 .avantages {
+    position: relative;
     padding: 4rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -242,12 +363,16 @@ header {
     font-size: 3rem;
     margin-bottom: 3rem;
     color: #ffffff;
+    position: relative;
+    z-index: 2;
 }
 
 .avantages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .avantage-card {
@@ -256,6 +381,12 @@ header {
     border-radius: 15px;
     text-align: center;
     backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+}
+
+.avantage-card:hover {
+    transform: translateY(-10px);
 }
 
 .avantage-icon {
@@ -350,6 +481,7 @@ header {
 
 /* CONTACT */
 .contact {
+    position: relative;
     padding: 4rem 2rem;
     max-width: 800px;
     margin: 0 auto;
@@ -360,6 +492,8 @@ header {
     font-size: 3rem;
     margin-bottom: 2rem;
     color: #ffffff;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-info-box {
@@ -369,6 +503,8 @@ header {
     text-align: center;
     margin-bottom: 3rem;
     backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
 }
 
 .contact-info-box p {
@@ -387,6 +523,8 @@ header {
     padding: 2.5rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
 }
 
 .form-row {
@@ -426,6 +564,12 @@ footer {
     margin-top: 4rem;
 }
 
+.footer-title {
+    font-family: 'Allura', cursive;
+    font-size: 2rem;
+    color: #FDB750;
+}
+
 footer p {
     margin: 0.5rem 0;
     font-size: 1.1rem;
@@ -463,7 +607,15 @@ footer a {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .services-images {
+        grid-template-columns: 1fr;
     }
 
     .form-row {
