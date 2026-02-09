@@ -7,13 +7,14 @@
     <meta name="description" content="Solaire Moon - Spécialistes du nettoyage professionnel dans les cantons de Vaud et Valais.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* RESET ET VARIABLES */
         :root {
             --primary-blue: #0d2340;
             --secondary-blue: #1a3a6b;
             --accent-gold: #e2b04a;
+            --sun-gold: #FFD700;
             --accent-pink: #ff3366;
             --light-blue: #4DB8E8;
             --text-light: #ffffff;
@@ -63,13 +64,6 @@
             height: 50px;
             width: auto;
             object-fit: contain;
-        }
-
-        .logo-text-nav {
-            font-family: 'Allura', cursive;
-            color: var(--accent-gold);
-            font-size: 22px;
-            margin: 0;
         }
 
         .nav-links-container {
@@ -158,9 +152,29 @@
             animation: fadeInUp 1s ease;
         }
 
+        .hero-brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5em;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--sun-gold);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
+            }
+        }
+
         .hero-title {
-            font-size: 3.5em;
-            font-weight: 700;
+            font-size: 2.5em;
+            font-weight: 600;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
@@ -380,6 +394,10 @@
             .prestations-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .hero-brand-name {
+                font-size: 3.5em;
+            }
         }
 
         @media (max-width: 768px) {
@@ -400,8 +418,16 @@
                 justify-content: center;
             }
 
+            .hero-brand-name {
+                font-size: 2.5em;
+            }
+
             .hero-title {
-                font-size: 2em;
+                font-size: 1.8em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2em;
             }
 
             .prestations-grid {
@@ -423,7 +449,6 @@
     <nav class="navbar-custom">
         <div class="nav-logo-block">
             <img src="https://raw.githubusercontent.com/EimenCreation/Solaire-Moon/main/logo.png.jpeg" alt="Logo Solaire Moon" class="logo-img-small">
-            <h1 class="logo-text-nav">Solaire Moon</h1>
         </div>
         <div class="nav-links-container">
             <a href="#accueil" class="nav-tab-item">Accueil</a>
@@ -439,7 +464,8 @@
     <!-- HERO SECTION -->
     <section id="accueil" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Nettoyage Professionnel en Suisse</h1>
+            <h1 class="hero-brand-name">Solaire Moon</h1>
+            <h2 class="hero-title">Nettoyage Professionnel</h2>
             <p class="hero-subtitle">Spécialistes du nettoyage dans les cantons de Vaud et Valais</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Demander un devis gratuit</a>
