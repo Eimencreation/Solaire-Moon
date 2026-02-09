@@ -476,19 +476,34 @@
     </div>
 </div>
 
-                <!-- LISTE 2 COLONNES -->
-                <div class="prestations-list">
-                    <ul>
-                        <li>✓ Nettoyage fin de chantier</li>
-                        <li>✓ Nettoyage de panneaux solaires</li>
-                        <li>✓ Nettoyage pour état des lieux</li>
-                        <li>✓ Nettoyage de vitres</li>
-                        <li>✓ Nettoyage de bureaux et locaux</li>
-                        <li>✓ Nettoyage après événement</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+             .prestations-list {
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+
+.prestations-list ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.prestations-list li {
+    background: white;
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-gold);
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    font-size: 1.1em;
+    color: var(--text-dark);
+    transition: transform 0.3s ease;
+}
+
+.prestations-list li:hover {
+    transform: translateX(5px);
+}
+
 
         <!-- ZONES -->
         <section id="zones" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white;">
