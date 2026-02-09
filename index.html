@@ -8,7 +8,414 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* RESET ET VARIABLES */
+        :root {
+            --primary-blue: #0d2340;
+            --secondary-blue: #1a3a6b;
+            --accent-gold: #e2b04a;
+            --accent-pink: #ff3366;
+            --light-blue: #4DB8E8;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* NAVIGATION */
+        .navbar-custom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-blue);
+            padding: 0 40px;
+            font-family: 'Montserrat', sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 70px;
+        }
+
+        .nav-logo-block {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            height: 100%;
+        }
+
+        .logo-img-small {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-text-nav {
+            font-family: 'Allura', cursive;
+            color: var(--accent-gold);
+            font-size: 22px;
+            margin: 0;
+        }
+
+        .nav-links-container {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-tab-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            height: 100%;
+            padding: 0 15px;
+        }
+
+        .nav-tab-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-tab-item:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-tab-item:hover::after {
+            width: 100%;
+        }
+
+        .phone-nav-button {
+            background: linear-gradient(135deg, var(--accent-gold), #d4941f);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(226, 176, 74, 0.3);
+            gap: 8px;
+            height: auto;
+        }
+
+        .phone-nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(226, 176, 74, 0.5);
+            color: white;
+        }
+
+        .phone-nav-button::after {
+            display: none;
+        }
+
+        .phone-text-gold {
+            color: white;
+            font-weight: 700;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: white;
+            box-shadow: 0 5px 20px rgba(226, 176, 74, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(226, 176, 74, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--primary-blue);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        /* SERVICES GRID */
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .prestations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 0;
+        }
+
+        .prestation-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .prestation-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .prestation-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .prestation-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(13,35,64,0.95), transparent);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        /* LISTE PRESTATIONS EN 2 COLONNES */
+        .prestations-list {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 40px auto 0;
+            max-width: 900px;
+        }
+
+        .prestations-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .prestations-list li {
+            padding: 15px 20px;
+            border-left: 4px solid #FFA500;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-size: 1.1em;
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .prestations-list li:hover {
+            background: #fff3e0;
+            transform: translateX(5px);
+        }
+
+        /* CONTACT FORM */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .prestations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-custom {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 20px;
+            }
+
+            .nav-links-container {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .nav-tab-item {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2em;
+            }
+
+            .prestations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .prestations-list ul {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- NAVIGATION -->
@@ -46,36 +453,29 @@
             <h2>Nos Services</h2>
             <div class="services-container">
                 <div class="prestations-grid">
-                    <!-- Image 1 : Fin de chantier -->
+                    <!-- Image 1 -->
                     <div class="prestation-item">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=350&fit=crop&q=80"
-                             alt="Nettoyage fin de chantier">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=350&fit=crop&q=80" alt="Nettoyage fin de chantier">
                         <div class="prestation-label">Fin de Chantier</div>
                     </div>
-
-                    <!-- Image 2 : Panneaux solaires -->
+                    <!-- Image 2 -->
                     <div class="prestation-item">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=350&fit=crop" 
-                             alt="Nettoyage de panneaux solaires">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=350&fit=crop" alt="Panneaux solaires">
                         <div class="prestation-label">Panneaux Solaires</div>
                     </div>
-
-                    <!-- Image 3 : Bureaux -->
+                    <!-- Image 3 -->
                     <div class="prestation-item">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=350&fit=crop" 
-                             alt="Nettoyage de bureaux">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=350&fit=crop" alt="Bureaux">
                         <div class="prestation-label">Bureaux Professionnels</div>
                     </div>
-
-                    <!-- Image 4 : Vitres -->
+                    <!-- Image 4 -->
                     <div class="prestation-item">
-                        <img src="images/nettoyer_vitre.jpg" 
-                             alt="Nettoyage professionnel de vitres">
+                        <img src="images/nettoyer_vitre.jpg" alt="Nettoyage vitres">
                         <div class="prestation-label">Nettoyage de Vitres</div>
                     </div>
                 </div>
 
-                <!-- ✅ LISTE EN 2 COLONNES CENTRÉE -->
+                <!-- LISTE 2 COLONNES -->
                 <div class="prestations-list">
                     <ul>
                         <li>✓ Nettoyage fin de chantier</li>
@@ -89,90 +489,40 @@
             </div>
         </section>
 
-        <!-- ZONES D'INTERVENTION -->
-        <section id="zones" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 80px 20px; color: white;">
-            <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                <h2 style="font-size: 2.5em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
-                    Nos Zones d'Intervention
-                </h2>
-                <p style="font-size: 1.2em; margin-bottom: 50px; opacity: 0.9;">
-                    Nous intervenons dans toute la Suisse romande, principalement dans les cantons de Vaud et Valais
-                </p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
-                    <!-- CARTE VAUD -->
-                    <div style="background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" 
-                         onmouseover="this.style.transform='translateY(-10px)'" 
-                         onmouseout="this.style.transform='translateY(0)'">
-
-                        <div style="display: inline-block; background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);">
-                            VD
-                        </div>
-
-                        <h3 style="font-size: 1.8em; color: #d1fae5; margin-bottom: 20px;">
-                            Canton de Vaud
-                        </h3>
-
-                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #047857; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Lausanne</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #047857; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Montreux</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #047857; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Vevey</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #047857; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Nyon</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #047857; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Yverdon</span>
-                        </div>
-
-                        <p style="color: #d1fae5; font-size: 14px; font-style: italic; margin-bottom: 20px;">
-                            + toutes les communes du canton
-                        </p>
-
-                        <a href="#contact" style="display: inline-block; background: #10b981; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);"
-                           onmouseover="this.style.background='#059669'; this.style.transform='scale(1.05)'"
-                           onmouseout="this.style.background='#10b981'; this.style.transform='scale(1)'">
-                            Demander un devis
-                        </a>
+        <!-- ZONES -->
+        <section id="zones" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white;">
+            <h2 style="color: white;">Nos Zones d'Intervention</h2>
+            <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- VAUD -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
+                    <div style="background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VD</div>
+                    <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton de Vaud</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Lausanne</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Montreux</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Vevey</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Nyon</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Yverdon</span>
                     </div>
-
-                    <!-- CARTE VALAIS -->
-                    <div style="background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;" 
-                         onmouseover="this.style.transform='translateY(-10px)'" 
-                         onmouseout="this.style.transform='translateY(0)'">
-
-                        <div style="display: inline-block; background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);">
-                            VS
-                        </div>
-
-                        <h3 style="font-size: 1.8em; color: #fecaca; margin-bottom: 20px;">
-                            Canton du Valais
-                        </h3>
-
-                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Martigny</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Sion</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Sierre</span>
-                        </div>
-
-                        <p style="color: #fecaca; font-size: 14px; font-style: italic; margin-bottom: 20px;">
-                            + toutes les communes du canton
-                        </p>
-
-                        <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);"
-                           onmouseover="this.style.background='#dc2626'; this.style.transform='scale(1.05)'"
-                           onmouseout="this.style.background='#ef4444'; this.style.transform='scale(1)'">
-                            Demander un devis
-                        </a>
-                    </div>
+                    <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
+                    <a href="#contact" style="display: inline-block; background: #10b981; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
                 </div>
-
-                <!-- Bannière couverture complète -->
-                <div style="background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); border: 2px dashed rgba(255,255,255,0.3); border-radius: 15px; padding: 30px; text-align: center; margin-top: 40px; backdrop-filter: blur(10px);">
-                    <p style="color: white; font-size: 1.3em; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">
-                        <strong>Couverture complète</strong> des 2 cantons • Intervention sous <strong>48h</strong> • Devis gratuit en <strong>24h</strong>
-                    </p>
+                <!-- VALAIS -->
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
+                    <div style="background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VS</div>
+                    <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton du Valais</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Martigny</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Sion</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Sierre</span>
+                    </div>
+                    <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
+                    <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
+        <!-- CONTACT -->
         <section id="contact">
             <h2>Contactez-nous</h2>
             <div class="contact-form">
