@@ -291,66 +291,91 @@
             background: var(--accent-gold);
         }
 
-       <!-- Services Section - VERSION AMÉLIORÉE -->
-<section id="services">
-    <div class="services-container">
-        <h2>✨ Nos Prestations</h2>
-        
-        <!-- Grille de 4 images -->
-        <div class="prestations-grid">
-            
-            <!-- Image 1 : Nettoyage (celle que tu as déjà) -->
-            <div class="prestation-item">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=350&fit=crop" 
-                     alt="Nettoyage professionnel">
-                <div class="prestation-label">
-                    <span>🧹</span> Nettoyage Résidentiel
-                </div>
-            </div>
+        /* SERVICES SECTION */
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-            <!-- Image 2 : Panneaux Solaires -->
-            <div class="prestation-item">
-                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=350&fit=crop" 
-                     alt="Nettoyage panneaux solaires">
-                <div class="prestation-label">
-                    <span>☀️</span> Panneaux Solaires
-                </div>
-            </div>
+        .prestations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 50px;
+        }
 
-            <!-- Image 3 : Bureaux -->
-            <div class="prestation-item">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=350&fit=crop" 
-                     alt="Nettoyage de bureaux">
-                <div class="prestation-label">
-                    <span>🏢</span> Bureaux Professionnels
-                </div>
-            </div>
+        .prestation-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
 
-            <!-- Image 4 : Vitres -->
-            <div class="prestation-item">
-                <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=500&h=350&fit=crop" 
-                     alt="Nettoyage de vitres">
-                <div class="prestation-label">
-                    <span>🪟</span> Nettoyage de Vitres
-                </div>
-            </div>
+        .prestation-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 165, 0, 0.3);
+        }
 
-        </div>
+        .prestation-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
 
-        <!-- Ta liste de prestations (on la garde !) -->
-        <div class="prestations-list">
-            <ul>
-                <li>✓ Nettoyage fin de chantier</li>
-                <li>✓ Nettoyage pour état des lieux</li>
-                <li>✓ Nettoyage de bureaux et locaux</li>
-                <li>✓ Nettoyage de panneaux solaires</li>
-                <li>✓ Nettoyage de vitres</li>
-                <li>✓ Nettoyage après événement</li>
-            </ul>
-        </div>
-    </div>
-</section>
+        .prestation-item:hover img {
+            transform: scale(1.1);
+        }
 
+        .prestation-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30, 60, 114, 0.95), transparent);
+            color: white;
+            padding: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .prestation-label span {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .prestations-list {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .prestations-list ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .prestations-list li {
+            padding: 15px;
+            border-left: 4px solid #FFA500;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-size: 1.1em;
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .prestations-list li:hover {
+            background: #fff3e0;
+            transform: translateX(10px);
+        }
 
         /* AVANTAGES SECTION */
         .avantages-grid {
@@ -389,65 +414,6 @@
         .avantage-card p {
             color: #666;
         }
-
-       <section id="zone" class="zone">
-    <h2>📍 Zone d'Intervention</h2>
-    <p class="zone-subtitle">Nous couvrons les cantons de Vaud et Valais, de Lausanne à Martigny.</p>
-
-    <!-- Carte SVG (à copier-coller) -->
-    <div class="custom-map-container">
-        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-            <!-- Fond de la carte (style illustration) -->
-            <path d="M100 100 L150 80 L200 90 L250 70 L300 85 L350 75 L400 90 L450 80 L500 100 L550 95 L600 110 L650 120 L700 110 L720 150 L700 200 L650 220 L600 210 L550 200 L500 190 L450 200 L400 190 L350 200 L300 190 L250 210 L200 200 L150 180 L100 190 Z"
-                  fill="#F5E6A8" stroke="#D4A574" stroke-width="2"/>
-
-            <!-- Lacs (Léman + autres) -->
-            <path d="M200 150 Q250 140 300 150 Q350 160 400 155 Q450 150 500 160 L500 200 Q450 190 400 195 Q350 200 300 190 Q250 180 200 190 Z"
-                  fill="#4DB8E8" opacity="0.7"/>
-
-            <!-- Points d'intervention (rouges) -->
-            <!-- Lausanne -->
-            <circle cx="250" cy="180" r="8" fill="#FF5A5A" stroke="white" stroke-width="2"/>
-            <text x="250" y="165" font-family="Montserrat" font-size="12" fill="#333" text-anchor="middle">Lausanne</text>
-
-            <!-- Montreux/Vevey -->
-            <circle cx="300" cy="170" r="8" fill="#FF5A5A" stroke="white" stroke-width="2"/>
-            <text x="300" y="155" font-family="Montserrat" font-size="12" fill="#333" text-anchor="middle">Montreux</text>
-
-            <!-- Aigle -->
-            <circle cx="350" cy="190" r="8" fill="#FF5A5A" stroke="white" stroke-width="2"/>
-            <text x="350" y="175" font-family="Montserrat" font-size="12" fill="#333" text-anchor="middle">Aigle</text>
-
-            <!-- Martigny -->
-            <circle cx="450" cy="220" r="8" fill="#FF5A5A" stroke="white" stroke-width="2"/>
-            <text x="450" y="205" font-family="Montserrat" font-size="12" fill="#333" text-anchor="middle">Martigny</text>
-
-            <!-- Sion -->
-            <circle cx="500" cy="210" r="8" fill="#FF5A5A" stroke="white" stroke-width="2"/>
-            <text x="500" y="195" font-family="Montserrat" font-size="12" fill="#333" text-anchor="middle">Sion</text>
-
-            <!-- Viège -->
-            <circle cx="550" cy="180" r="8" fill="#FF5A5A" stroke="white" stroke-width="2"/>
-            <text x="550" y="165" font-family="Montserrat" font-size="12" fill="#333" text-anchor="middle">Viège</text>
-
-            <!-- Légende -->
-            <text x="150" y="250" font-family="Montserrat" font-size="14" fill="#333">Zone d'intervention : Vaud & Valais</text>
-        </svg>
-    </div>
-
-    <!-- Liste des villes (optionnel) -->
-    <div class="cities-list">
-        <div class="canton">
-            <h3>🇨🇭 Canton de Vaud</h3>
-            <p>Lausanne, Montreux, Vevey, Aigle, Yverdon, Morges, Nyon, Renens, Pully</p>
-        </div>
-        <div class="canton">
-            <h3>🇨🇭 Canton du Valais</h3>
-            <p>Martigny, Sion, Sierre, Viège, Monthey, Brigue, Fully, Conthey</p>
-        </div>
-    </div>
-</section>
-
 
         /* CONTACT SECTION */
         .contact-form {
@@ -496,6 +462,12 @@
         }
 
         /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .prestations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .navbar-custom {
                 flex-direction: column;
@@ -512,8 +484,12 @@
                 font-size: 3rem;
             }
 
-            .services-container {
-                flex-direction: column;
+            .prestations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .prestations-list ul {
+                grid-template-columns: 1fr;
             }
 
             .form-row {
@@ -565,6 +541,7 @@
     </header>
 
     <main>
+        <!-- HERO SECTION -->
         <section id="accueil" class="hero">
             <div class="bubbles">
                 <div class="bubble"></div>
@@ -585,147 +562,257 @@
             </div>
         </section>
 
-        <section id="services" class="services-visual">
+        <!-- SERVICES SECTION -->
+        <section id="services">
             <div class="services-container">
-                <div class="services-left">
-                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Professionnelle de nettoyage" class="service-image">
-                </div>
-                <div class="services-right">
-                    <h2>✨ Nos Prestations</h2>
-                    <div class="service-list">
-                        <div class="service-item">
-                            <span class="check-icon">✓</span>
-                            <span>Nettoyage fin de chantier</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="check-icon">✓</span>
-                            <span>Nettoyage pour état des lieux</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="check-icon">✓</span>
-                            <span>Nettoyage de bureaux et locaux</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="check-icon">✓</span>
-                            <span>Nettoyage de panneaux solaires</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="check-icon">✓</span>
-                            <span>Nettoyage de vitres</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="check-icon">✓</span>
-                            <span>Nettoyage après événement</span>
+                <h2>✨ Nos Prestations</h2>
+                
+                <!-- Grille de 4 images -->
+                <div class="prestations-grid">
+                    
+                    <!-- Image 1 : Nettoyage -->
+                    <div class="prestation-item">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=350&fit=crop" 
+                             alt="Nettoyage professionnel">
+                        <div class="prestation-label">
+                            <span>🧹</span> Nettoyage Résidentiel
                         </div>
                     </div>
+
+                    <!-- Image 2 : Panneaux Solaires -->
+                    <div class="prestation-item">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=350&fit=crop" 
+                             alt="Nettoyage panneaux solaires">
+                        <div class="prestation-label">
+                            <span>☀️</span> Panneaux Solaires
+                        </div>
+                    </div>
+
+                    <!-- Image 3 : Bureaux -->
+                    <div class="prestation-item">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=350&fit=crop" 
+                             alt="Nettoyage de bureaux">
+                        <div class="prestation-label">
+                            <span>🏢</span> Bureaux Professionnels
+                        </div>
+                    </div>
+
+                    <!-- Image 4 : Vitres -->
+                    <div class="prestation-item">
+                        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=500&h=350&fit=crop" 
+                             alt="Nettoyage de vitres">
+                        <div class="prestation-label">
+                            <span>🪟</span> Nettoyage de Vitres
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Liste de prestations -->
+                <div class="prestations-list">
+                    <ul>
+                        <li>✓ Nettoyage fin de chantier</li>
+                        <li>✓ Nettoyage pour état des lieux</li>
+                        <li>✓ Nettoyage de bureaux et locaux</li>
+                        <li>✓ Nettoyage de panneaux solaires</li>
+                        <li>✓ Nettoyage de vitres</li>
+                        <li>✓ Nettoyage après événement</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="avantages" class="avantages">
-            <h2>⚡ Pourquoi Choisir Solaire Moon ?</h2>
+        <!-- AVANTAGES SECTION -->
+        <section id="avantages">
+            <h2>⚡ Nos Avantages</h2>
             <div class="avantages-grid">
                 <div class="avantage-card">
-                    <div class="avantage-icon">🇨🇭</div>
-                    <h3>Qualité Suisse</h3>
-                    <p>Entreprise locale avec des standards de qualité suisses</p>
+                    <div class="avantage-icon">⚡</div>
+                    <h3>Rapidité</h3>
+                    <p>Intervention sous 48h partout en Suisse romande</p>
                 </div>
                 <div class="avantage-card">
-                    <div class="avantage-icon">🌱</div>
-                    <h3>Écologique</h3>
-                    <p>Utilisation de produits respectueux de l'environnement</p>
+                    <div class="avantage-icon">✨</div>
+                    <h3>Qualité</h3>
+                    <p>Matériel professionnel et produits écologiques</p>
                 </div>
                 <div class="avantage-card">
                     <div class="avantage-icon">💰</div>
-                    <h3>Devis Gratuit</h3>
-                    <p>Estimation sans engagement et transparente</p>
+                    <h3>Prix compétitifs</h3>
+                    <p>Devis gratuit et tarifs transparents</p>
                 </div>
                 <div class="avantage-card">
-                    <div class="avantage-icon">⏱️</div>
-                    <h3>Rapidité</h3>
-                    <p>Intervention rapide et efficace dans les 48h</p>
+                    <div class="avantage-icon">👍</div>
+                    <h3>Satisfaction</h3>
+                    <p>Garantie de satisfaction à 100%</p>
                 </div>
             </div>
         </section>
 
-        <section id="zone" class="zone">
-            <h2>📍 Zone d'Intervention</h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">
-                Nous intervenons principalement dans les cantons de Vaud et Valais, avec une disponibilité pour d'autres régions sur demande.
-            </p>
-            <div class="cantons-grid">
-                <div class="canton-card">
-                    <h3>🇨🇭 Canton de Vaud</h3>
-                    <p>Lausanne, Morges, Nyon, Vevey, Montreux, Yverdon-les-Bains, Renens, Pully, Prilly, Gland, Rolle, Aubonne, Echallens, Orbe, Aigle</p>
+        <!-- ZONE CARTE INTERACTIVE -->
+        <section id="zones-intervention" style="padding: 80px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div style="max-width: 1200px; margin: 0 auto;">
+
+                <!-- Titre section -->
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h2 style="font-size: 2.5em; color: white; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+                        🗺️ Nos Zones d'Intervention
+                    </h2>
+                    <p style="font-size: 1.2em; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">
+                        Nous couvrons les cantons de <strong>Vaud</strong> et du <strong>Valais</strong> pour tous vos besoins de nettoyage
+                    </p>
                 </div>
-                <div class="canton-card">
-                    <h3>🇨🇭 Canton du Valais</h3>
-                    <p>Sion, Martigny, Monthey, Sierre, Viège, Brigue, Conthey, Fully, Collombey-Muraz, Saint-Maurice, Saillon, Riddes</p>
+
+                <!-- Carte interactive -->
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin-bottom: 50px; position: relative;">
+
+                    <!-- Image de fond (carte Suisse) -->
+                    <div style="position: relative; height: 500px; background: linear-gradient(to bottom, #e0f2ff 0%, #bae6fd 50%, #7dd3fc 100%); overflow: hidden;">
+
+                        <!-- Drapeau Suisse (coin supérieur droit) -->
+                        <div style="position: absolute; top: 20px; right: 20px; width: 60px; height: 60px; background: #DC143C; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 10;">
+                            <span style="color: white; font-size: 35px; font-weight: bold;">+</span>
+                        </div>
+
+                        <!-- Canton de Vaud (pin vert) -->
+                        <div style="position: absolute; top: 35%; left: 38%; transform: translate(-50%, -50%); cursor: pointer; z-index: 5;" 
+                             onmouseover="this.style.transform='translate(-50%, -50%) scale(1.2)'" 
+                             onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5); border: 3px solid white; transition: all 0.3s ease;"></div>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg); color: white; font-weight: bold; font-size: 14px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">VD</div>
+                        </div>
+
+                        <!-- Canton du Valais (pin rouge) -->
+                        <div style="position: absolute; top: 55%; left: 60%; transform: translate(-50%, -50%); cursor: pointer; z-index: 5;" 
+                             onmouseover="this.style.transform='translate(-50%, -50%) scale(1.2)'" 
+                             onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5); border: 3px solid white; transition: all 0.3s ease;"></div>
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg); color: white; font-weight: bold; font-size: 14px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">VS</div>
+                        </div>
+
+                        <!-- Montagnes décoratives -->
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, rgba(100, 116, 139, 0.3) 0%, transparent 100%);"></div>
+
+                        <!-- Légende -->
+                        <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.95); padding: 15px 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <div style="display: flex; gap: 20px; align-items: center;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div style="width: 20px; height: 20px; background: #10b981; border-radius: 50%;"></div>
+                                    <span style="font-size: 14px; color: #1f2937; font-weight: 500;">Canton de Vaud</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div style="width: 20px; height: 20px; background: #ef4444; border-radius: 50%;"></div>
+                                    <span style="font-size: 14px; color: #1f2937; font-weight: 500;">Canton du Valais</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Cartes détaillées par canton -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                    <!-- CARTE VALAIS -->
+                    <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2); border: 3px solid #ef4444; transition: transform 0.3s ease;" 
+                         onmouseover="this.style.transform='translateY(-10px)'" 
+                         onmouseout="this.style.transform='translateY(0)'">
+
+                        <!-- Badge canton -->
+                        <div style="display: inline-block; background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);">
+                            VS
+                        </div>
+
+                        <h3 style="font-size: 1.8em; color: #991b1b; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                            Canton du Valais
+                        </h3>
+
+                        <!-- Villes principales -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Martigny</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Sion</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Sierre</span>
+                        </div>
+
+                        <p style="color: #7f1d1d; font-size: 14px; font-style: italic; margin-bottom: 20px;">
+                            + toutes les communes du canton
+                        </p>
+
+                        <!-- Bouton action -->
+                        <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);"
+                           onmouseover="this.style.background='#dc2626'; this.style.transform='scale(1.05)'"
+                           onmouseout="this.style.background='#ef4444'; this.style.transform='scale(1)'">
+                            Demander un devis 🚀
+                        </a>
+                    </div>
+
+                    <!-- CARTE VAUD -->
+                    <div style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2); border: 3px solid #10b981; transition: transform 0.3s ease;" 
+                         onmouseover="this.style.transform='translateY(-10px)'" 
+                         onmouseout="this.style.transform='translateY(0)'">
+
+                        <!-- Badge canton -->
+                        <div style="display: inline-block; background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);">
+                            VD
+                        </div>
+
+                        <h3 style="font-size: 1.8em; color: #065f46; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                            Canton de Vaud
+                        </h3>
+
+                        <!-- Villes principales -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Lausanne</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Montreux</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Vevey</span>
+                        </div>
+
+                        <p style="color: #064e3b; font-size: 14px; font-style: italic; margin-bottom: 20px;">
+                            + toutes les communes du canton
+                        </p>
+
+                        <!-- Bouton action -->
+                        <a href="#contact" style="display: inline-block; background: #10b981; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);"
+                           onmouseover="this.style.background='#059669'; this.style.transform='scale(1.05)'"
+                           onmouseout="this.style.background='#10b981'; this.style.transform='scale(1)'">
+                            Demander un devis 🚀
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Bannière couverture complète -->
+                <div style="background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); border: 2px dashed rgba(255,255,255,0.3); border-radius: 15px; padding: 30px; text-align: center; margin-top: 40px; backdrop-filter: blur(10px);">
+                    <p style="color: white; font-size: 1.3em; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">
+                        🏔️ <strong>Couverture complète</strong> des 2 cantons • Intervention sous <strong>48h</strong> • Devis gratuit en <strong>24h</strong>
+                    </p>
+                </div>
+
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <!-- CONTACT SECTION -->
+        <section id="contact">
             <h2>📞 Contactez-nous</h2>
-            <form class="contact-form">
-                <div class="form-row">
-                    <input type="text" placeholder="Votre nom *" required>
-                    <input type="email" placeholder="Votre email *" required>
-                </div>
-                <input type="tel" placeholder="Votre téléphone" style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; margin-bottom: 20px;">
-                <select style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; margin-bottom: 20px;">
-                    <option>Type de nettoyage souhaité</option>
-                    <option>Fin de chantier</option>
-                    <option>État des lieux</option>
-                    <option>Bureaux et locaux</option>
-                    <option>Panneaux solaires</option>
-                    <option>Vitres</option>
-                    <option>Autre</option>
-                </select>
-                <textarea rows="5" placeholder="Votre message *" required></textarea>
-                <button type="submit" class="btn-primary">Envoyer votre demande</button>
-            </form>
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <input type="text" name="nom" placeholder="Votre nom" required>
+                        <input type="email" name="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" name="telephone" placeholder="Votre téléphone" required>
+                    </div>
+                    <textarea name="message" rows="5" placeholder="Décrivez votre besoin..." required></textarea>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Envoyer ma demande</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p><strong>Solaire Moon</strong> - Nettoyage Professionnel en Suisse 🇨🇭</p>
-        <p>Route de Lausanne 123, 1000 Lausanne | <a href="tel:+41768191040" style="color: var(--accent-gold);">+41 76 819 10 40</a></p>
-        <p>&copy; 2023 Solaire Moon. Tous droits réservés.</p>
+        <p>&copy; 2024 Solaire Moon - Nettoyage Professionnel en Suisse</p>
+        <p>📞 +41 76 819 10 40 | ✉️ contact@solairemoon.ch</p>
+        <p>🇨🇭 Cantons de Vaud et Valais</p>
     </footer>
-
-    <script>
-        // Smooth scrolling pour les liens d'ancrage
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animation des cartes au scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.avantage-card, .canton-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
