@@ -37,7 +37,7 @@
             text-decoration: none;
         }
 
-        /* ===== NAVIGATION CORRIGÉE ===== */
+        /* ===== NAVIGATION PARFAITEMENT ALIGNÉE ===== */
         .navbar-custom {
             display: flex;
             justify-content: space-between;
@@ -49,7 +49,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            height: 80px; /* HAUTEUR FIXE POUR ALIGNEMENT */
+            height: 70px;
         }
 
         .nav-logo-block {
@@ -60,49 +60,42 @@
         }
 
         .logo-img-small {
-            height: 50px;
+            height: 45px;
             width: auto;
         }
 
         .logo-text-nav {
             font-family: 'Allura', cursive;
             color: var(--accent-gold);
-            font-size: 24px;
+            font-size: 22px;
             margin: 0;
         }
 
         .nav-links-container {
             display: flex;
-            gap: 30px;
-            align-items: center; /* ALIGNEMENT VERTICAL PARFAIT */
+            gap: 35px;
+            align-items: center;
             height: 100%;
         }
 
         .nav-tab-item {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center; /* CENTRAGE VERTICAL */
+            justify-content: center;
             text-decoration: none;
             color: var(--text-light);
             transition: all 0.3s ease;
             padding: 0 10px;
             height: 100%;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .nav-tab-item:hover {
             color: var(--light-blue);
-        }
-
-        .nav-tab-item span:first-child {
-            font-size: 18px;
-            margin-bottom: 3px;
-        }
-
-        .nav-tab-item span:last-child {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
+            border-bottom: 2px solid var(--light-blue);
         }
 
         .phone-nav-button {
@@ -113,7 +106,6 @@
             border-radius: 50px;
             padding: 10px 20px;
             transition: all 0.3s ease;
-            height: auto;
         }
 
         .phone-nav-button:hover {
@@ -346,14 +338,9 @@
             background: linear-gradient(to top, rgba(30, 60, 114, 0.95), transparent);
             color: white;
             padding: 20px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: bold;
             text-align: center;
-        }
-
-        .prestation-label span {
-            font-size: 1.5em;
-            margin-right: 10px;
         }
 
         .prestations-list {
@@ -405,9 +392,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .avantage-card span {
+        .avantage-icon {
             font-size: 3rem;
-            display: block;
             margin-bottom: 15px;
         }
 
@@ -478,7 +464,7 @@
                 flex-direction: column;
                 padding: 15px;
                 gap: 15px;
-                height: auto; /* Hauteur auto sur mobile */
+                height: auto;
             }
 
             .nav-links-container {
@@ -517,26 +503,11 @@
             </div>
 
             <div class="nav-links-container">
-                <a href="#accueil" class="nav-tab-item">
-                    <span>🏠</span>
-                    <span>Accueil</span>
-                </a>
-                <a href="#services" class="nav-tab-item">
-                    <span>✨</span>
-                    <span>Services</span>
-                </a>
-                <a href="#avantages" class="nav-tab-item">
-                    <span>⭐</span>
-                    <span>Avantages</span>
-                </a>
-                <a href="#zone" class="nav-tab-item">
-                    <span>📍</span>
-                    <span>Zone</span>
-                </a>
-                <a href="#contact" class="nav-tab-item">
-                    <span>📞</span>
-                    <span>Contact</span>
-                </a>
+                <a href="#accueil" class="nav-tab-item">Accueil</a>
+                <a href="#services" class="nav-tab-item">Services</a>
+                <a href="#avantages" class="nav-tab-item">Avantages</a>
+                <a href="#zone" class="nav-tab-item">Zone</a>
+                <a href="#contact" class="nav-tab-item">Contact</a>
             </div>
 
             <a href="tel:+41768191040" class="phone-nav-button">
@@ -571,43 +542,35 @@
 
         <!-- SERVICES SECTION -->
         <section id="services">
-            <h2>✨ Nos Services</h2>
+            <h2>Nos Services</h2>
             <div class="services-container">
                 <div class="prestations-grid">
                     <!-- Image 1 : Fin de chantier -->
                     <div class="prestation-item">
                         <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=350&fit=crop" 
                              alt="Nettoyage fin de chantier">
-                        <div class="prestation-label">
-                            <span>🏗️</span> Fin de Chantier
-                        </div>
+                        <div class="prestation-label">Fin de Chantier</div>
                     </div>
 
                     <!-- Image 2 : Panneaux solaires -->
                     <div class="prestation-item">
                         <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=350&fit=crop" 
                              alt="Nettoyage de panneaux solaires">
-                        <div class="prestation-label">
-                            <span>☀️</span> Panneaux Solaires
-                        </div>
+                        <div class="prestation-label">Panneaux Solaires</div>
                     </div>
 
                     <!-- Image 3 : Bureaux -->
                     <div class="prestation-item">
                         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=350&fit=crop" 
                              alt="Nettoyage de bureaux">
-                        <div class="prestation-label">
-                            <span>🏢</span> Bureaux Professionnels
-                        </div>
+                        <div class="prestation-label">Bureaux Professionnels</div>
                     </div>
 
                     <!-- Image 4 : Vitres -->
                     <div class="prestation-item">
                         <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=500&h=350&fit=crop" 
                              alt="Nettoyage de vitres">
-                        <div class="prestation-label">
-                            <span>🪟</span> Nettoyage de Vitres
-                        </div>
+                        <div class="prestation-label">Nettoyage de Vitres</div>
                     </div>
                 </div>
 
@@ -627,38 +590,38 @@
 
         <!-- AVANTAGES SECTION -->
         <section id="avantages">
-            <h2>⭐ Pourquoi nous choisir ?</h2>
+            <h2>Pourquoi nous choisir ?</h2>
             <div class="avantages-grid">
                 <div class="avantage-card">
-                    <span>🏆</span>
-                    <h3>Professionnalisme</h3>
-                    <p>Une équipe expérimentée et formée aux meilleures techniques</p>
-                </div>
-                <div class="avantage-card">
-                    <span>⚡</span>
+                    <div class="avantage-icon">⚡</div>
                     <h3>Rapidité</h3>
-                    <p>Intervention rapide et efficace selon vos besoins</p>
+                    <p>Intervention sous 48h partout en Suisse romande</p>
                 </div>
                 <div class="avantage-card">
-                    <span>🌿</span>
-                    <h3>Écologique</h3>
-                    <p>Produits respectueux de l'environnement</p>
+                    <div class="avantage-icon">✨</div>
+                    <h3>Qualité</h3>
+                    <p>Matériel professionnel et produits écologiques</p>
                 </div>
                 <div class="avantage-card">
-                    <span>💯</span>
-                    <h3>Satisfaction garantie</h3>
-                    <p>Résultat impeccable ou on recommence</p>
+                    <div class="avantage-icon">💰</div>
+                    <h3>Prix compétitifs</h3>
+                    <p>Devis gratuit et tarifs transparents</p>
+                </div>
+                <div class="avantage-card">
+                    <div class="avantage-icon">👍</div>
+                    <h3>Satisfaction</h3>
+                    <p>Garantie de satisfaction à 100%</p>
                 </div>
             </div>
         </section>
 
-        <!-- ZONE SECTION -->
+        <!-- ZONE CARTE INTERACTIVE -->
         <section id="zone" style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); padding: 80px 20px; margin: 0 -20px;">
             <div style="max-width: 1200px; margin: 0 auto;">
                 <!-- Titre section -->
                 <div style="text-align: center; margin-bottom: 60px;">
                     <h2 style="font-size: 2.5em; color: white; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
-                        🗺️ Nos Zones d'Intervention
+                        Nos Zones d'Intervention
                     </h2>
                     <p style="font-size: 1.2em; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">
                         Nous couvrons les cantons de <strong>Vaud</strong> et du <strong>Valais</strong> pour tous vos besoins de nettoyage
@@ -713,10 +676,10 @@
                         </h3>
 
                         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Lausanne</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Montreux</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Vevey</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Nyon</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Lausanne</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Montreux</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Vevey</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #059669; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Nyon</span>
                         </div>
 
                         <p style="color: #064e3b; font-size: 14px; font-style: italic; margin-bottom: 20px;">
@@ -726,7 +689,7 @@
                         <a href="#contact" style="display: inline-block; background: #10b981; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);"
                            onmouseover="this.style.background='#059669'; this.style.transform='scale(1.05)'"
                            onmouseout="this.style.background='#10b981'; this.style.transform='scale(1)'">
-                            Demander un devis 🚀
+                            Demander un devis
                         </a>
                     </div>
 
@@ -744,9 +707,9 @@
                         </h3>
 
                         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Martigny</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Sion</span>
-                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">📍 Sierre</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Martigny</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Sion</span>
+                            <span style="background: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; color: #dc2626; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">Sierre</span>
                         </div>
 
                         <p style="color: #7f1d1d; font-size: 14px; font-style: italic; margin-bottom: 20px;">
@@ -756,7 +719,7 @@
                         <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);"
                            onmouseover="this.style.background='#dc2626'; this.style.transform='scale(1.05)'"
                            onmouseout="this.style.background='#ef4444'; this.style.transform='scale(1)'">
-                            Demander un devis 🚀
+                            Demander un devis
                         </a>
                     </div>
                 </div>
@@ -764,7 +727,7 @@
                 <!-- Bannière couverture complète -->
                 <div style="background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); border: 2px dashed rgba(255,255,255,0.3); border-radius: 15px; padding: 30px; text-align: center; margin-top: 40px; backdrop-filter: blur(10px);">
                     <p style="color: white; font-size: 1.3em; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">
-                        🏔️ <strong>Couverture complète</strong> des 2 cantons • Intervention sous <strong>48h</strong> • Devis gratuit en <strong>24h</strong>
+                        <strong>Couverture complète</strong> des 2 cantons • Intervention sous <strong>48h</strong> • Devis gratuit en <strong>24h</strong>
                     </p>
                 </div>
             </div>
@@ -772,7 +735,7 @@
 
         <!-- CONTACT SECTION -->
         <section id="contact">
-            <h2>📞 Contactez-nous</h2>
+            <h2>Contactez-nous</h2>
             <div class="contact-form">
                 <form action="#" method="post">
                     <div class="form-row">
