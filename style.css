@@ -398,6 +398,120 @@ header {
     text-align: center;
     margin-top: 50px;
 }
+/* Section Services - Prestations avec images */
+#services {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-container h2 {
+    text-align: center;
+    color: #1e3c72;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+/* Grille de 4 images */
+.prestations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.prestation-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.prestation-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 165, 0, 0.3);
+}
+
+.prestation-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.prestation-item:hover img {
+    transform: scale(1.1);
+}
+
+.prestation-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(30, 60, 114, 0.95), transparent);
+    color: white;
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.prestation-label span {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+/* Liste des prestations */
+.prestations-list {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.prestations-list ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.prestations-list li {
+    padding: 15px;
+    border-left: 4px solid #FFA500;
+    background: #f8f9fa;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.prestations-list li:hover {
+    background: #fff3e0;
+    transform: translateX(10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .prestations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .prestations-list ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-container h2 {
+        font-size: 2em;
+    }
+}
 
 /* Responsive */
 @media (max-width: 768px) {
