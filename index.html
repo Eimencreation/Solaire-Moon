@@ -4,70 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solaire Moon - Nettoyage Professionnel en Suisse</title>
-    <meta name="description" content="Solaire Moon - Spécialistes du nettoyage professionnel dans les cantons de Vaud et Valais.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* STYLE DE LA BARRE DE NAVIGATION (Correction Alignement et Ligne) */
+        /* CONFIGURATION BARRE DE NAVIGATION TYPE PHOTO 2 */
         .navbar-custom {
             display: flex !important;
             justify-content: space-between;
-          <header style="background-color: #0d2340; padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
-        <nav style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
-            
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <img src="logo.png" alt="Logo" style="height: 45px; width: auto;">
-                <h1 style="font-family: 'Allura', cursive; color: #e2b04a; margin: 0; font-size: 28px; line-height: 1;">Solaire Moon</h1>
-            </div>
+            align-items: center;
+            background-color: #0d2340;
+            padding: 10px 40px;
+            font-family: 'Montserrat', sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-            <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0;">
-                <li style="text-align: center;">
-                    <a href="#accueil" style="text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                        <span style="font-size: 18px;">🏠</span>
-                        <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Accueil</span>
-                    </a>
-                </li>
-                <li style="text-align: center;">
-                    <a href="#services" style="text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                        <span style="font-size: 18px;">✨</span>
-                        <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Services</span>
-                    </a>
-                </li>
-                <li style="text-align: center;">
-                    <a href="#avantages" style="text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                        <span style="font-size: 18px;">⚡</span>
-                        <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Avantages</span>
-                    </a>
-                </li>
-                <li style="text-align: center;">
-                    <a href="#zone" style="text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                        <span style="font-size: 18px;">📍</span>
-                        <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Zone</span>
-                    </a>
-                </li>
-                <li style="text-align: center;">
-                    <a href="#contact" style="text-decoration: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                        <span style="font-size: 18px;">📞</span>
-                        <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Contact</span>
-                    </a>
-                </li>
-            </ul>
+        .nav-logo-block {
+            display: flex;
+            align-items: center;
+        }
 
-            <div style="display: block;">
-                <a href="tel:+41768191040" style="display: flex; align-items: center; border: 2px solid #e2b04a; border-radius: 50px; padding: 8px 18px; text-decoration: none; white-space: nowrap;">
-                    <span style="color: #ff3366; font-size: 18px; line-height: 1;">📞</span>
-                    <span style="color: #e2b04a; font-weight: 700; font-family: 'Montserrat', sans-serif; margin-left: 10px; font-size: 15px;">+41 76 819 10 40</span>
-                </a>
-            </div>
-
-        </nav>
-    </header>
-            color: #e2b04a;
-            font-size: 24px;
-            margin: 0;
+        .logo-img-nav {
+            height: 60px; 
+            width: auto;
+            display: block;
         }
 
         .nav-links-container {
@@ -77,50 +41,39 @@
 
         .nav-tab-item {
             display: flex;
-            flex-direction: column; /* Icône au-dessus du texte */
-            align-items: center;    /* Symétrie parfaite */
+            flex-direction: column;
+            align-items: center;
             text-decoration: none;
             color: white;
-            transition: 0.3s;
         }
 
-        .nav-tab-item span:first-child {
-            font-size: 18px;
-        }
-
+        .nav-tab-item span:first-child { font-size: 18px; }
         .nav-tab-item span:last-child {
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 11px;
+            font-weight: 700;
             text-transform: uppercase;
+            margin-top: 2px;
         }
 
-        .nav-tab-item:hover {
-            color: #4DB8E8;
-        }
-
-        /* BOUTON TÉLÉPHONE (Force la ligne unique) */
+        /* BOUTON TÉLÉPHONE (OBJECTIF PHOTO 2) */
         .phone-nav-button {
             display: flex !important;
-            flex-direction: row !important; /* Force icône + texte côte à côte */
+            flex-direction: row !important;
             align-items: center !important;
-            white-space: nowrap !important; /* Interdit le retour à la ligne */
-            border: 2px solid #e2b04a;
-            border-radius: 50px;
+            white-space: nowrap !important; /* Force la ligne unique */
+            border: 2px solid #e2b04a; /* Bordure dorée */
+            border-radius: 50px; /* Forme pilule */
             padding: 8px 20px;
             text-decoration: none;
-            min-width: max-content;
-            transition: 0.3s;
-        }
-
-        .phone-nav-button:hover {
-            background-color: rgba(226, 176, 74, 0.1);
-        }
-
-        .phone-text-gold {
             color: #e2b04a;
             font-weight: bold;
-            font-size: 15px;
-            margin-left: 10px;
+            min-width: max-content;
+        }
+
+        .phone-icon-pink {
+            color: #ff3366;
+            margin-right: 10px;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -129,95 +82,70 @@
     <header>
         <nav class="navbar-custom">
             <div class="nav-logo-block">
-                <img src="logo.png" alt="Logo" class="logo-img-small">
-                <h1 class="logo-text-nav">Solaire Moon</h1>
+                <a href="#accueil">
+                    <img src="LOGO.jpeg" alt="Solaire Moon Logo" class="logo-img-nav">
+                </a>
             </div>
 
             <div class="nav-links-container">
-                <a href="#accueil" class="nav-tab-item"><span>🏠</span><span>Accueil</span></a>
-                <a href="#services" class="nav-tab-item"><span>✨</span><span>Services</span></a>
-                <a href="#avantages" class="nav-tab-item"><span>⚡</span><span>Avantages</span></a>
-                <a href="#zone" class="nav-tab-item"><span>📍</span><span>Zone</span></a>
-                <a href="#contact" class="nav-tab-item"><span>📞</span><span>Contact</span></a>
+                <a href="#accueil" class="nav-tab-item"><span>🏠</span><span>ACCUEIL</span></a>
+                <a href="#services" class="nav-tab-item"><span>✨</span><span>SERVICES</span></a>
+                <a href="#avantages" class="nav-tab-item"><span>⚡</span><span>AVANTAGES</span></a>
+                <a href="#zone" class="nav-tab-item"><span>📍</span><span>ZONE</span></a>
+                <a href="#contact" class="nav-tab-item"><span>📞</span><span>CONTACT</span></a>
             </div>
 
             <a href="tel:+41768191040" class="phone-nav-button">
-                <span style="color: #ff3366;">📞</span>
-                <span class="phone-text-gold">+41 76 819 10 40</span>
+                <span class="phone-icon-pink">📞</span> +41 76 819 10 40
             </a>
         </nav>
     </header>
 
     <section id="accueil" class="hero">
-        <div class="bubbles">
-            <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
-            <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
-        </div>
         <div class="hero-content">
-            <div class="hero-logo">
-                <img src="logo.png" alt="Solaire Moon Logo" class="hero-logo-img">
-            </div>
-            <h1 class="hero-title">Solaire Moon</h1>
-            <p class="hero-subtitle">NETTOYAGE</p>
-            <p class="hero-description">
+            <img src="LOGO.jpeg" alt="Solaire Moon" style="max-width: 280px; height: auto; margin-bottom: 20px;">
+            <h1 style="color: white; font-size: 2.5rem; letter-spacing: 2px;">SOLAIRE MOON</h1>
+            <p style="color: white; font-size: 1.2rem; font-weight: bold;">NETTOYAGE</p>
+            <p style="color: white; max-width: 700px; margin: 20px auto;">
                 Nous réalisons tous types de prestations de nettoyage professionnel en Suisse.
             </p>
-            <a href="#contact" class="btn-primary">📞 Demandez un devis gratuit</a>
+            <a href="#contact" class="btn-primary" style="background-color: #e2b04a; color: #0d2340; padding: 15px 35px; border-radius: 8px; font-weight: bold; text-decoration: none; display: inline-block;">
+                📞 Demandez un devis gratuit
+            </a>
         </div>
     </section>
 
-    <section id="services" class="services-visual">
-        <div class="services-container">
-            <div class="services-left">
-                <img src="cleaning-lady.jpg" alt="Professionnelle" class="service-image">
+    <section id="services" class="services-visual" style="padding: 80px 20px; background: white; color: #0d2340;">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="font-size: 2rem;">✨ Nos Prestations</h2>
+                <ul style="list-style: none; padding: 0; line-height: 2.5; font-weight: 600;">
+                    <li>✅ Nettoyage de fin de chantier</li>
+                    <li>✅ Nettoyage d'état des lieux</li>
+                    <li>✅ Entretien de bureaux et locaux</li>
+                    <li>✅ Nettoyage de panneaux solaires</li>
+                </ul>
             </div>
-            <div class="services-right">
-                <h2>✨ Nos Prestations</h2>
-                <div class="service-list">
-                    <div class="service-item"><span class="check-icon">✓</span><span>Fin de chantier</span></div>
-                    <div class="service-item"><span class="check-icon">✓</span><span>État des lieux</span></div>
-                    <div class="service-item"><span class="check-icon">✓</span><span>Bureaux et Locaux</span></div>
-                    <div class="service-item"><span class="check-icon">✓</span><span>Panneaux solaires</span></div>
-                </div>
+            <div style="flex: 1; min-width: 300px;">
+                <img src="cleaning-lady.jpg" alt="Nettoyage" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             </div>
         </div>
     </section>
 
-    <section id="avantages" class="avantages">
-        <h2>⚡ Pourquoi Choisir Solaire Moon ?</h2>
-        <div class="avantages-grid">
-            <div class="avantage-card"><div class="avantage-icon">🇨🇭</div><h3>Swiss Made</h3><p>Qualité suisse</p></div>
-            <div class="avantage-card"><div class="avantage-icon">🌱</div><h3>Écologique</h3><p>Produits verts</p></div>
-            <div class="avantage-card"><div class="avantage-icon">💰</div><h3>Devis Gratuit</h3><p>Sans engagement</p></div>
-        </div>
-    </section>
-
-    <section id="zone" class="zone">
-        <h2>📍 Zone d'Intervention</h2>
-        <p>Vaud et Valais</p>
-        <div class="cantons-grid">
-            <div class="canton-card"><h3>🇨🇭 Vaud</h3><p>Lausanne, Morges, Gland...</p></div>
-            <div class="canton-card"><h3>🇨🇭 Valais</h3><p>Sion, Martigny, Viège...</p></div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>📞 Contactez-nous</h2>
-        <form class="contact-form">
-            <div class="form-row">
-                <input type="text" placeholder="Nom *" required>
-                <input type="email" placeholder="Email *" required>
+    <section id="avantages" style="padding: 80px 20px; text-align: center; background: #f9f9f9;">
+        <h2 style="color: #0d2340; margin-bottom: 40px;">⚡ Pourquoi Choisir Solaire Moon ?</h2>
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <div style="background: white; padding: 30px; border-radius: 15px; width: 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <div style="font-size: 45px; margin-bottom: 15px;">🇨🇭</div>
+                <h3 style="color: #0d2340;">Swiss Made</h3>
+                <p>Qualité et précision suisse pour chaque intervention.</p>
             </div>
-            <textarea rows="4" placeholder="Votre message *"></textarea>
-            <button type="submit" class="btn-primary">Envoyer</button>
-        </form>
+            <div style="background: white; padding: 30px; border-radius: 15px; width: 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <div style="font-size: 45px; margin-bottom: 15px;">🌱</div>
+                <h3 style="color: #0d2340;">Écologique</h3>
+                <p>Utilisation de produits respectueux de votre santé et de l'environnement.</p>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p><strong>Solaire Moon</strong> - Nettoyage Professionnel en Suisse 🇨🇭</p>
-        <p>&copy; 2025 Solaire Moon. Tous droits réservés.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <footer style="padding: 50px
