@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* STYLE DE LA BARRE DE NAVIGATION (Correction Alignement et Ligne) */
+        /* STYLE DE LA BARRE DE NAVIGATION */
         .navbar-custom {
             display: flex !important;
             justify-content: space-between;
@@ -27,19 +27,13 @@
         .nav-logo-block {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
 
-        .logo-img-small {
-            height: 40px;
+        /* Taille ajustée pour ton nouveau logo graphique */
+        .logo-img-nav {
+            height: 60px; 
             width: auto;
-        }
-
-        .logo-text-nav {
-            font-family: 'Allura', cursive;
-            color: #e2b04a;
-            font-size: 24px;
-            margin: 0;
+            display: block;
         }
 
         .nav-links-container {
@@ -49,8 +43,8 @@
 
         .nav-tab-item {
             display: flex;
-            flex-direction: column; /* Icône au-dessus du texte */
-            align-items: center;    /* Symétrie parfaite */
+            flex-direction: column; 
+            align-items: center;    
             text-decoration: none;
             color: white;
             transition: 0.3s;
@@ -70,12 +64,12 @@
             color: #4DB8E8;
         }
 
-        /* BOUTON TÉLÉPHONE (Force la ligne unique) */
+        /* BOUTON TÉLÉPHONE (Ligne unique) */
         .phone-nav-button {
             display: flex !important;
-            flex-direction: row !important; /* Force icône + texte côte à côte */
+            flex-direction: row !important; 
             align-items: center !important;
-            white-space: nowrap !important; /* Interdit le retour à la ligne */
+            white-space: nowrap !important; 
             border: 2px solid #e2b04a;
             border-radius: 50px;
             padding: 8px 20px;
@@ -94,6 +88,12 @@
             font-size: 15px;
             margin-left: 10px;
         }
+
+        /* Ajustement logo Hero */
+        .hero-logo-img {
+            max-width: 250px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -101,8 +101,9 @@
     <header>
         <nav class="navbar-custom">
             <div class="nav-logo-block">
-                <img src="logo.png" alt="Logo" class="logo-img-small">
-                <h1 class="logo-text-nav">Solaire Moon</h1>
+                <a href="#accueil">
+                    <img src="LOGO.jpeg" alt="Solaire Moon Logo" class="logo-img-nav">
+                </a>
             </div>
 
             <div class="nav-links-container">
@@ -115,81 +116,4 @@
 
             <a href="tel:+41768191040" class="phone-nav-button">
                 <span style="color: #ff3366;">📞</span>
-                <span class="phone-text-gold">+41 76 819 10 40</span>
-            </a>
-        </nav>
-    </header>
-
-    <section id="accueil" class="hero">
-        <div class="bubbles">
-            <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
-            <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-logo">
-                <img src="logo.png" alt="Solaire Moon Logo" class="hero-logo-img">
-            </div>
-            <h1 class="hero-title">Solaire Moon</h1>
-            <p class="hero-subtitle">NETTOYAGE</p>
-            <p class="hero-description">
-                Nous réalisons tous types de prestations de nettoyage professionnel en Suisse.
-            </p>
-            <a href="#contact" class="btn-primary">📞 Demandez un devis gratuit</a>
-        </div>
-    </section>
-
-    <section id="services" class="services-visual">
-        <div class="services-container">
-            <div class="services-left">
-                <img src="cleaning-lady.jpg" alt="Professionnelle" class="service-image">
-            </div>
-            <div class="services-right">
-                <h2>✨ Nos Prestations</h2>
-                <div class="service-list">
-                    <div class="service-item"><span class="check-icon">✓</span><span>Fin de chantier</span></div>
-                    <div class="service-item"><span class="check-icon">✓</span><span>État des lieux</span></div>
-                    <div class="service-item"><span class="check-icon">✓</span><span>Bureaux et Locaux</span></div>
-                    <div class="service-item"><span class="check-icon">✓</span><span>Panneaux solaires</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="avantages" class="avantages">
-        <h2>⚡ Pourquoi Choisir Solaire Moon ?</h2>
-        <div class="avantages-grid">
-            <div class="avantage-card"><div class="avantage-icon">🇨🇭</div><h3>Swiss Made</h3><p>Qualité suisse</p></div>
-            <div class="avantage-card"><div class="avantage-icon">🌱</div><h3>Écologique</h3><p>Produits verts</p></div>
-            <div class="avantage-card"><div class="avantage-icon">💰</div><h3>Devis Gratuit</h3><p>Sans engagement</p></div>
-        </div>
-    </section>
-
-    <section id="zone" class="zone">
-        <h2>📍 Zone d'Intervention</h2>
-        <p>Vaud et Valais</p>
-        <div class="cantons-grid">
-            <div class="canton-card"><h3>🇨🇭 Vaud</h3><p>Lausanne, Morges, Gland...</p></div>
-            <div class="canton-card"><h3>🇨🇭 Valais</h3><p>Sion, Martigny, Viège...</p></div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>📞 Contactez-nous</h2>
-        <form class="contact-form">
-            <div class="form-row">
-                <input type="text" placeholder="Nom *" required>
-                <input type="email" placeholder="Email *" required>
-            </div>
-            <textarea rows="4" placeholder="Votre message *"></textarea>
-            <button type="submit" class="btn-primary">Envoyer</button>
-        </form>
-    </section>
-
-    <footer>
-        <p><strong>Solaire Moon</strong> - Nettoyage Professionnel en Suisse 🇨🇭</p>
-        <p>&copy; 2025 Solaire Moon. Tous droits réservés.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <span class="phone-text-gold">+
