@@ -405,84 +405,70 @@ header {
     margin-bottom: 0.5rem;
 }
 
-/* ZONE */
-.zone {
-    padding: 4rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.zone h2 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.zone-intro {
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 3rem;
-    color: #FDB750;
-}
-
+/* ===== CARTE SVG (remplace .map-simple) ===== */
 .map-container {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    margin-bottom: 3rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.map-simple {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-}
-
-.cantons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.canton-card {
+    max-width: 900px;
+    margin: 0 auto 3rem;
     background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
     border-radius: 15px;
     backdrop-filter: blur(10px);
+    overflow: hidden;
 }
 
-.canton-flag {
-    height: 80px;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
+.map-svg {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
-.vaud-flag {
-    background: linear-gradient(to bottom, #007A3D 50%, white 50%);
+/* Animation des points au survol */
+.location-point {
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.valais-flag {
-    background: linear-gradient(to right, white 50%, #CE1126 50%);
+.location-point:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 8px #FDB750);
+}
+
+/* Ajustements pour la grille des cantons */
+.cantons-grid {
+    margin-top: 2rem;
+}
+
+.canton-card {
+    background: rgba(255, 255, 255, 0.15); /* Légèrement plus opaque */
+    padding: 1.5rem;
 }
 
 .canton-card h3 {
-    color: #FDB750;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-.canton-card ul {
-    list-style: none;
+.canton-card li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
 }
 
-.canton-card li {
-    padding: 0.6rem 0;
-    color: #ffffff;
-    font-size: 1.1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+/* Responsive */
+@media (max-width: 768px) {
+    .map-container {
+        padding: 1rem;
+    }
+
+    .map-svg {
+        max-height: 300px;
+    }
+
+    .cantons-grid {
+        grid-template-columns: 1fr;
+    }
 }
+
 
 /* CONTACT */
 .contact {
