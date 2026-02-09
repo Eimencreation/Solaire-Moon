@@ -7,25 +7,25 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #1a1a1a;
-    background: linear-gradient(180deg, #2c5aa0 0%, #4a90e2 20%, #87ceeb 50%, #e6f3ff 80%, #ffffff 100%);
+    color: #ffffff;
+    background: linear-gradient(135deg, #0f2847 0%, #1e4d7b 50%, #4DB8E8 100%);
     min-height: 100vh;
 }
 
 /* HEADER */
 header {
-    background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
-    padding: 1rem 2rem;
+    background: rgba(15, 40, 71, 0.95);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -42,18 +42,10 @@ header {
 }
 
 .logo h1 {
-    color: #4DB8E8;
     font-size: 1.8rem;
+    color: #ffffff;
     font-weight: 700;
-}
-
-.swiss-badge {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: white;
-    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -63,7 +55,7 @@ header {
 }
 
 .nav-links a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
@@ -71,97 +63,119 @@ header {
 }
 
 .nav-links a:hover {
-    color: #4DB8E8;
+    color: #FDB750;
+}
+
+.contact-info .phone {
+    color: #FDB750;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #FDB750;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.contact-info .phone:hover {
+    background: #FDB750;
+    color: #0f2847;
 }
 
 .burger {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    gap: 5px;
 }
 
 .burger div {
     width: 25px;
     height: 3px;
     background: white;
-    margin: 4px;
     transition: 0.3s;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #0f2847 0%, #1e4d7b 50%, #4DB8E8 100%);
 }
 
 .hero-logo-img {
     height: 120px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    color: #1e3a5f;
+    font-size: 4rem;
     margin-bottom: 1rem;
+    color: #ffffff;
     font-weight: 800;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
 }
 
 .hero-subtitle {
-    font-size: 1.8rem;
-    color: #2c5aa0;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #FDB750;
+    margin-bottom: 2rem;
     font-weight: 600;
 }
 
 .hero-description {
     font-size: 1.3rem;
-    color: #1a1a1a;
-    margin-bottom: 2rem;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 3rem auto;
+    color: #ffffff;
+    line-height: 1.8;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
+.highlight {
+    color: #FDB750;
+    font-weight: 700;
 }
 
 .btn-primary {
-    background: #4DB8E8;
-    color: white;
+    display: inline-block;
+    background: linear-gradient(135deg, #FDB750 0%, #f39c12 100%);
+    color: #0f2847;
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: all 0.3s;
+    box-shadow: 0 8px 25px rgba(253, 183, 80, 0.4);
 }
 
 .btn-primary:hover {
-    background: #3a9fd4;
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(77, 184, 232, 0.4);
+    box-shadow: 0 12px 35px rgba(253, 183, 80, 0.6);
 }
 
-.btn-secondary {
-    background: white;
-    color: #2c5aa0;
-    border: 2px solid #2c5aa0;
+/* WELCOME */
+.welcome {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 3rem auto;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
 }
 
-.btn-secondary:hover {
-    background: #2c5aa0;
-    color: white;
+.welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #FDB750;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 /* SERVICES */
@@ -173,45 +187,86 @@ header {
 
 .services h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: #1e3a5f;
+    font-size: 3rem;
     margin-bottom: 3rem;
-    font-weight: 700;
+    color: #ffffff;
 }
 
 .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #FDB750;
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+/* AVANTAGES */
+.avantages {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.avantages h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
+
+.avantages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.service-card {
-    background: rgba(255, 255, 255, 0.95);
+.avantage-card {
+    background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    backdrop-filter: blur(10px);
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-}
-
-.service-icon {
-    font-size: 3.5rem;
+.avantage-icon {
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.service-card h3 {
-    color: #1e3a5f;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.service-card p {
-    color: #1a1a1a;
-    font-size: 1.1rem;
+.avantage-card h3 {
+    color: #FDB750;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
 }
 
 /* ZONE */
@@ -223,126 +278,63 @@ header {
 
 .zone h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: #1e3a5f;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    font-weight: 700;
+    color: #ffffff;
 }
 
 .zone-intro {
     text-align: center;
     font-size: 1.3rem;
-    color: #1a1a1a;
     margin-bottom: 3rem;
+    color: #FDB750;
 }
 
 .map-container {
-    margin: 3rem 0;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .map-simple {
-    position: relative;
-    height: 400px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.map-city {
-    position: absolute;
-    text-align: center;
-}
-
-.city-marker {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 0 auto 5px;
-    border: 3px solid white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    animation: pulse 2s infinite;
-}
-
-.city-marker.valais {
-    background: #E30613;
-}
-
-.city-marker.vaud {
-    background: #4A7729;
-}
-
-.city-name {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 4px 10px;
-    border-radius: 8px;
-    white-space: nowrap;
-}
-
-.map-legend {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1rem;
-    border-radius: 10px;
-    display: flex;
-    gap: 1.5rem;
-    font-weight: 600;
-    color: #1a1a1a;
-}
-
-.legend-dot {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-.legend-dot.valais {
-    background: #E30613;
-}
-
-.legend-dot.vaud {
-    background: #4A7729;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    width: 100%;
+    height: auto;
+    max-height: 400px;
 }
 
 .cantons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
 }
 
 .canton-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .canton-flag {
     height: 80px;
     border-radius: 10px;
-    overflow: hidden;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.vaud-flag {
+    background: linear-gradient(to bottom, #007A3D 50%, white 50%);
+}
+
+.valais-flag {
+    background: linear-gradient(to right, white 50%, #CE1126 50%);
 }
 
 .canton-card h3 {
-    color: #1e3a5f;
+    color: #FDB750;
     font-size: 1.6rem;
     margin-bottom: 1rem;
-    font-weight: 700;
 }
 
 .canton-card ul {
@@ -351,9 +343,9 @@ header {
 
 .canton-card li {
     padding: 0.6rem 0;
-    color: #1a1a1a;
+    color: #ffffff;
     font-size: 1.1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* CONTACT */
@@ -365,17 +357,36 @@ header {
 
 .contact h2 {
     text-align: center;
-    font-size: 2.5rem;
-    color: #1e3a5f;
+    font-size: 3rem;
     margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.contact-info-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(10px);
+}
+
+.contact-info-box p {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+}
+
+.contact-info-box a {
+    color: #FDB750;
+    text-decoration: none;
     font-weight: 700;
 }
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.1);
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 .form-row {
@@ -388,32 +399,27 @@ header {
 .contact-form input,
 .contact-form textarea {
     padding: 1rem;
-    border: 2px solid #ddd;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     font-size: 1rem;
     font-family: inherit;
-    transition: border-color 0.3s;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0f2847;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #4DB8E8;
-}
-
-.contact-form textarea {
-    width: 100%;
-    resize: vertical;
+    border-color: #FDB750;
 }
 
 .contact-form button {
     width: 100%;
-    margin-top: 1rem;
 }
 
 /* FOOTER */
 footer {
-    background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+    background: rgba(15, 40, 71, 0.95);
     color: white;
     text-align: center;
     padding: 2rem;
@@ -425,9 +431,14 @@ footer p {
     font-size: 1.1rem;
 }
 
+footer a {
+    color: #FDB750;
+    text-decoration: none;
+}
+
 .swiss-footer {
-    font-weight: 600;
-    color: #4DB8E8;
+    font-weight: 700;
+    color: #FDB750;
 }
 
 /* RESPONSIVE */
@@ -441,7 +452,7 @@ footer p {
         right: -100%;
         top: 70px;
         flex-direction: column;
-        background: #1e3a5f;
+        background: #0f2847;
         width: 100%;
         padding: 2rem;
         transition: 0.3s;
@@ -459,7 +470,7 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .map-simple {
-        height: 300px;
+    .contact-info {
+        display: none;
     }
 }
