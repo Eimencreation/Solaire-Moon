@@ -241,3 +241,100 @@
     <script src="script.js"></script>
 </body>
 </html>
+<style>
+  /* Reset rapide pour éviter les marges par défaut */
+  body { margin: 0; padding: 0; }
+
+  /* Barre de navigation principale */
+  .navbar-container {
+    display: flex;
+    justify-content: space-between; /* Écarte le menu et le téléphone */
+    align-items: center;           /* Centre tout verticalement */
+    background-color: #0d2340;      /* Bleu nuit profond */
+    padding: 15px 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+
+  /* Conteneur des onglets (Accueil, Services, etc.) */
+  .nav-tabs {
+    display: flex;
+    gap: 35px; /* Espace entre chaque onglet */
+  }
+
+  /* Chaque onglet individuel (Icône en haut / Texte en bas) */
+  .nav-tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Alignement vertical parfait */
+    text-decoration: none;
+    gap: 5px;
+    transition: opacity 0.3s;
+  }
+
+  .nav-tab-item:hover {
+    opacity: 0.8;
+  }
+
+  .tab-icon {
+    font-size: 18px;
+  }
+
+  .tab-text {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* --- BLOC TÉLÉPHONE (Sur une seule ligne) --- */
+  .phone-button {
+    display: flex;
+    flex-direction: row;      /* Force l'icône et le texte côte à côte */
+    align-items: center;      /* Aligne horizontalement */
+    white-space: nowrap;      /* Empêche le retour à la ligne */
+    border: 2px solid #e2b04a; /* Bordure dorée */
+    border-radius: 50px;      /* Forme ovale (pilule) */
+    padding: 8px 20px;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .phone-number {
+    color: #e2b04a;           /* Chiffres dorés */
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .phone-icon-pink {
+    color: #ff3366;           /* Rose/rouge pour l'icône de l'appel */
+  }
+</style>
+
+<nav class="navbar-container">
+  <div class="nav-tabs">
+    <a href="#accueil" class="nav-tab-item">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-text">Accueil</span>
+    </a>
+    <a href="#services" class="nav-tab-item">
+      <span class="tab-icon">✨</span>
+      <span class="tab-text">Services</span>
+    </a>
+    <a href="#avantages" class="nav-tab-item">
+      <span class="tab-icon">⚡</span>
+      <span class="tab-text">Avantages</span>
+    </a>
+    <a href="#zone" class="nav-tab-item">
+      <span class="tab-icon">📍</span>
+      <span class="tab-text">Zone</span>
+    </a>
+    <a href="#contact" class="nav-tab-item">
+      <span class="tab-icon">📞</span>
+      <span class="tab-text">Contact</span>
+    </a>
+  </div>
+
+  <a href="tel:+41768191040" class="phone-button">
+    <span class="phone-icon-pink">📞</span>
+    <span class="phone-number">+41 76 819 10 40</span>
+  </a>
+</nav>
