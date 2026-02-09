@@ -376,32 +376,95 @@
             color: #666;
         }
 
-        /* ZONE SECTION */
-        .cantons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
+       <section id="zone" class="zone">
+    <h2>📍 Zone d'Intervention</h2>
+    <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem; color: #555;">
+        Nous intervenons principalement dans les cantons de <strong>Vaud</strong> et <strong>Valais</strong>, avec une disponibilité étendue sur demande.
+    </p>
 
-        .canton-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+    <!-- Carte interactive -->
+    <div class="map-container">
+        <div class="map-mountain-background">
+            <!-- Image de fond (remplacez par une image des Alpes suisses) -->
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Carte des Alpes suisses - Vaud et Valais" class="mountain-bg">
+            <div class="map-overlay"></div>
 
-        .canton-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--primary-blue);
-        }
+            <!-- Points de localisation (ajustez les % pour correspondre à la géographie réelle) -->
+            <!-- Canton de Vaud -->
+            <div class="location-point" style="top: 35%; left: 20%;" data-city="Lausanne">
+                <div class="point"></div>
+                <span class="point-label">Lausanne</span>
+            </div>
+            <div class="location-point" style="top: 30%; left: 25%;" data-city="Morges">
+                <div class="point"></div>
+                <span class="point-label">Morges</span>
+            </div>
+            <div class="location-point" style="top: 40%; left: 15%;" data-city="Yverdon">
+                <div class="point"></div>
+                <span class="point-label">Yverdon</span>
+            </div>
+            <div class="location-point" style="top: 25%; left: 30%;" data-city="Montreux">
+                <div class="point"></div>
+                <span class="point-label">Montreux</span>
+            </div>
+            <div class="location-point" style="top: 30%; left: 35%;" data-city="Vevey">
+                <div class="point"></div>
+                <span class="point-label">Vevey</span>
+            </div>
+            <div class="location-point" style="top: 45%; left: 25%;" data-city="Aigle">
+                <div class="point"></div>
+                <span class="point-label">Aigle</span>
+            </div>
 
-        .canton-card p {
-            color: #666;
-            font-size: 1.1rem;
-        }
+            <!-- Canton du Valais -->
+            <div class="location-point" style="top: 50%; left: 45%;" data-city="Martigny">
+                <div class="point"></div>
+                <span class="point-label">Martigny</span>
+            </div>
+            <div class="location-point" style="top: 55%; left: 55%;" data-city="Sion">
+                <div class="point"></div>
+                <span class="point-label">Sion</span>
+            </div>
+            <div class="location-point" style="top: 45%; left: 60%;" data-city="Sierre">
+                <div class="point"></div>
+                <span class="point-label">Sierre</span>
+            </div>
+            <div class="location-point" style="top: 35%; left: 65%;" data-city="Viège">
+                <div class="point"></div>
+                <span class="point-label">Viège</span>
+            </div>
+            <div class="location-point" style="top: 50%; left: 70%;" data-city="Brigue">
+                <div class="point"></div>
+                <span class="point-label">Brigue</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Légende -->
+    <div class="zone-legend">
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #4DB8E8;"></div>
+            <span>Zone principale</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #e2b04a;"></div>
+            <span>Villes desservies</span>
+        </div>
+    </div>
+
+    <!-- Liste détaillée des villes -->
+    <div class="cantons-list">
+        <div class="canton-card">
+            <h3>🇨🇭 Canton de Vaud</h3>
+            <p>Lausanne, Morges, Nyon, Vevey, Montreux, Yverdon-les-Bains, Renens, Pully, Prilly, Gland, Rolle, Aubonne, Echallens, Orbe, Aigle</p>
+        </div>
+        <div class="canton-card">
+            <h3>🇨🇭 Canton du Valais</h3>
+            <p>Sion, Martigny, Monthey, Sierre, Viège, Brigue, Conthey, Fully, Collombey-Muraz, Saint-Maurice, Saillon, Riddes</p>
+        </div>
+    </div>
+</section>
+
 
         /* CONTACT SECTION */
         .contact-form {
