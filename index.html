@@ -343,34 +343,23 @@
             text-align: center;
         }
 
-        .prestations-list {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
         .prestations-list ul {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            list-style: none;
-        }
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        .prestations-list li {
-            font-size: 1.1em;
-            color: var(--primary-blue);
-            padding: 10px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-
-        .prestations-list li:hover {
-            transform: translateX(10px);
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-        }
-
+.prestations-list li {
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-left: 4px solid #FFA500;
+    background: #f8f9fa;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #333;
+    transition: all 0.3s;
+}
         /* AVANTAGES SECTION */
         .avantages-grid {
             display: grid;
@@ -568,8 +557,8 @@
 
                   <!-- Image 4 : Vitres -->
 <div class="prestation-item">
-    <img src="https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=500&h=350&fit=crop&q=80"
-         alt="Nettoyage de vitres professionnel">
+    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=500&h=350&fit=crop&q=80" 
+     alt="Nettoyage de vitres professionnel">
     <div class="prestation-label">
         <span></span> Nettoyage de Vitres
     </div>
