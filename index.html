@@ -4,27 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solaire Moon - Nettoyage Professionnel en Suisse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* 1. CORRECTION BARRE DE NAVIGATION (LIGNE UNIQUE) */
+        /* RÉTABLISSEMENT DU DESIGN ET DES COULEURS */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #0d2340; color: white; overflow-x: hidden; }
+
+        /* BARRE DE NAVIGATION (Ligne unique forcée) */
         .navbar-custom {
             display: flex !important;
             justify-content: space-between;
             align-items: center;
-            background-color: #0d2340; /* Votre bleu d'origine */
+            background-color: #0d2340; 
             padding: 10px 40px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        .nav-links-container {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
+        .nav-logo-block img { height: 55px; width: auto; display: block; }
+
+        .nav-links-container { display: flex; gap: 20px; align-items: center; }
 
         .nav-tab-item {
             display: flex;
@@ -37,15 +41,16 @@
         .nav-tab-item span:last-child {
             font-size: 10px;
             font-weight: 700;
-            margin-top: 2px;
+            text-transform: uppercase;
+            margin-top: 3px;
         }
 
-        /* BOUTON TÉLÉPHONE SUR UNE LIGNE */
+        /* BOUTON TÉLÉPHONE (Comme sur votre photo) */
         .phone-nav-button {
             display: flex !important;
             align-items: center !important;
             white-space: nowrap !important;
-            border: 2px solid #e2b04a; /* Votre doré */
+            border: 2px solid #e2b04a; 
             border-radius: 50px;
             padding: 8px 20px;
             text-decoration: none;
@@ -54,18 +59,20 @@
             font-size: 14px;
         }
 
-        /* 2. STYLE DE LA CARTE */
-        .map-section {
-            padding: 60px 20px;
-            text-align: center;
-            background: white;
-        }
+        /* SECTIONS DU SITE */
+        section { padding: 80px 20px; text-align: center; }
+        .hero { padding: 100px 20px; }
+        .hero-logo-main { max-width: 280px; margin-bottom: 20px; }
+        .services-visual { background: white; color: #0d2340; }
+
+        /* BLOC CARTE ZONE D'INTERVENTION */
         .map-wrapper {
             max-width: 1000px;
-            margin: 20px auto;
-            border-radius: 15px;
+            margin: 40px auto;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #e2b04a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -74,7 +81,7 @@
     <header>
         <nav class="navbar-custom">
             <div class="nav-logo-block">
-                <a href="#accueil"><img src="LOGO.jpeg" alt="Logo" style="height: 50px; width: auto;"></a>
+                <a href="#accueil"><img src="LOGO.jpeg" alt="Logo Solaire Moon"></a>
             </div>
 
             <div class="nav-links-container">
@@ -86,22 +93,24 @@
             </div>
 
             <a href="tel:+41768191040" class="phone-nav-button">
-                <span style="margin-right: 8px;">📞</span> +41 76 819 10 40
+                <span style="color: #ff3366; margin-right: 10px;">📞</span> +41 76 819 10 40
             </a>
         </nav>
     </header>
 
-    <section id="zone" class="map-section">
-        <h2 style="color: #0d2340;">📍 Notre Zone d'Intervention</h2>
-        <p style="color: #666;">Nous intervenons rapidement dans les cantons de <strong>Vaud</strong> et <strong>Valais</strong>.</p>
-        
-        <div class="map-wrapper">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d175440.385034606!2d6.505058641972803!3d46.52844898166687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c29aecd026f73%3A0x7f4e93342502787c!2sCanton%20de%20Vaud%2C%20Suisse!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-        </div>
+    <section id="accueil" class="hero">
+        <img src="LOGO.jpeg" alt="Solaire Moon" class="hero-logo-main">
+        <h1 style="letter-spacing: 2px; font-size: 2.5rem;">SOLAIRE MOON</h1>
+        <p style="color: #e2b04a; font-weight: bold; font-size: 1.2rem; margin-top: -10px;">NETTOYAGE PROFESSIONNEL</p>
+        <p style="max-width: 700px; margin: 20px auto; opacity: 0.9; line-height: 1.6;">
+            Nous réalisons tous types de prestations de nettoyage professionnel en Suisse, spécialisés dans les cantons de Vaud et Valais.
+        </p>
+        <a href="#contact" style="background-color: #e2b04a; color: #0d2340; padding: 15px 35px; border-radius: 8px; font-weight: bold; text-decoration: none; display: inline-block; transition: 0.3s;">
+            Demandez un devis gratuit
+        </a>
     </section>
 
-    </body>
-</html>
+    <section id="services" class="services-visual">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; text-align: left;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style
