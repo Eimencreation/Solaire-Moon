@@ -3,491 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solaire Moon - Nettoyage Professionnel</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0A1628 0%, #1a2642 100%);
-            color: #E8F1F5;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #0A1628 0%, #1a2642 50%, #4DB8E8 100%);
-            padding: 3rem 0;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(77, 184, 232, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(244, 185, 66, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .logo-container {
-            position: relative;
-            z-index: 10;
-            margin-bottom: 1.5rem;
-        }
-
-        .logo {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto;
-            background: #0A1628;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 30px rgba(77, 184, 232, 0.5);
-            position: relative;
-        }
-
-        .logo::before {
-            content: '☀️';
-            font-size: 35px;
-            position: absolute;
-            left: 12px;
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        .logo::after {
-            content: '🌙';
-            font-size: 35px;
-            position: absolute;
-            right: 12px;
-            animation: pulse 3s ease-in-out infinite 1.5s;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #E8F1F5;
-            text-shadow: 0 0 20px rgba(77, 184, 232, 0.5);
-            position: relative;
-            z-index: 10;
-            margin-top: 1rem;
-            letter-spacing: 3px;
-        }
-
-        .tagline {
-            color: #F4B942;
-            font-size: 1.3rem;
-            margin-top: 0.5rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        nav {
-            background: rgba(10, 22, 40, 0.95);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #E8F1F5;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover {
-            background: #4DB8E8;
-            color: #0A1628;
-            transform: translateY(-2px);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        section {
-            background: rgba(26, 38, 66, 0.8);
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(77, 184, 232, 0.2);
-        }
-
-        h2 {
-            color: #4DB8E8;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(77, 184, 232, 0.3);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #0A1628 0%, #1a2642 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #4DB8E8;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(77, 184, 232, 0.2);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(77, 184, 232, 0.4);
-            border-color: #F4B942;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            color: #4DB8E8;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: #E8F1F5;
-            line-height: 1.8;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #F4B942 0%, #4DB8E8 100%);
-            color: #0A1628;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(244, 185, 66, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(244, 185, 66, 0.5);
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            width: 70px;
-            height: 70px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 40px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            animation: bounce 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.15);
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-7px); }
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            color: #4DB8E8;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #4DB8E8;
-            background: rgba(10, 22, 40, 0.6);
-            color: #E8F1F5;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #F4B942;
-            box-shadow: 0 0 15px rgba(244, 185, 66, 0.3);
-        }
-
-        button[type="submit"] {
-            width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(135deg, #F4B942 0%, #4DB8E8 100%);
-            color: #0A1628;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(244, 185, 66, 0.3);
-        }
-
-        button[type="submit"]:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(244, 185, 66, 0.5);
-        }
-
-        footer {
-            background: #0A1628;
-            color: #E8F1F5;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-            border-top: 3px solid #4DB8E8;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-        }
-    </style>
+    <title>Solaire Moon - Nettoyage Professionnel de Panneaux Solaires en Suisse</title>
+    <meta name="description" content="Solaire Moon - Spécialistes du nettoyage de panneaux solaires dans les cantons de Vaud et Valais. Service professionnel de Martigny à Lausanne.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- HEADER / NAVIGATION -->
     <header>
-        <div class="logo-container">
-            <div class="logo"></div>
-        </div>
-        <h1>SOLAIRE MOON</h1>
-        <p class="tagline">Nettoyage Professionnel</p>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>🌙 Solaire Moon</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#zone">Zone d'intervention</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#accueil">🏠 Accueil</a></li>
-            <li><a href="#services">🔧 Services</a></li>
-            <li><a href="#avantages">✨ Avantages</a></li>
-            <li><a href="#contact">📞 Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <section id="accueil">
-            <h2>🌙 Bienvenue chez Solaire Moon</h2>
-            <p style="text-align: center; font-size: 1.2rem; line-height: 2;">
-                Spécialiste du <strong style="color: #F4B942;">nettoyage professionnel</strong> en Suisse. 
-                Nous proposons une gamme complète de services pour <strong style="color: #4DB8E8;">particuliers et professionnels</strong> : 
-                nettoyage de panneaux solaires, entretien de bureaux, logements, chantiers, cabinets médicaux et bien plus encore.
+    <!-- HERO SECTION -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">🌙 Solaire Moon</h1>
+            <p class="hero-subtitle">Nettoyage Professionnel de Panneaux Solaires</p>
+            <p class="hero-description">
+                Augmentez le rendement de vos panneaux solaires jusqu'à 30% grâce à notre service de nettoyage professionnel.
             </p>
-            <p style="text-align: center; margin-top: 1rem;">
-                <a href="#contact" class="cta-button">📞 Demandez un devis gratuit</a>
-            </p>
-        </section>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Demander un devis gratuit</a>
+                <a href="#services" class="btn btn-secondary">Découvrir nos services</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="solar-animation">
+                <div class="sun"></div>
+                <div class="panel"></div>
+            </div>
+        </div>
+    </section>
 
-        <section id="services">
-            <h2>🔧 Nos Services Premium</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">☀️</div>
-                    <h3>Nettoyage Panneaux Solaires</h3>
-                    <p>Optimisez le rendement de vos installations photovoltaïques avec notre service professionnel de nettoyage.</p>
+    <!-- SECTION SERVICES -->
+    <section id="services" class="services">
+        <h2>🔧 Nos Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">☀️</div>
+                <h3>Nettoyage de Panneaux Solaires</h3>
+                <p>Nettoyage professionnel avec produits écologiques pour maximiser votre production d'énergie.</p>
+                <ul class="service-features">
+                    <li>✅ Augmentation du rendement jusqu'à 30%</li>
+                    <li>✅ Produits respectueux de l'environnement</li>
+                    <li>✅ Équipe qualifiée et assurée</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Inspection et Maintenance</h3>
+                <p>Vérification complète de vos installations pour prévenir les pannes.</p>
+                <ul class="service-features">
+                    <li>✅ Détection des défauts</li>
+                    <li>✅ Rapport détaillé</li>
+                    <li>✅ Conseils personnalisés</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Intervention Rapide</h3>
+                <p>Service professionnel dans les cantons de Vaud et Valais.</p>
+                <ul class="service-features">
+                    <li>✅ Devis gratuit sous 24h</li>
+                    <li>✅ Intervention flexible</li>
+                    <li>✅ Tarifs compétitifs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ZONE D'INTERVENTION -->
+    <section id="zone" class="zone-intervention">
+        <h2>🗺️ Notre Zone d'Intervention</h2>
+        <p class="zone-subtitle">Nous couvrons les cantons du Valais et de Vaud</p>
+        
+        <!-- Carte Google Maps centrée sur la zone -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d177193.73089474!2d6.7824!3d46.2944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x478ea3fbd722c5b7%3A0x18bd6e7583e6b2f5!2sMartigny%2C%20Suisse!3m2!1d46.1024!2d7.0796!4m5!1s0x478c2e3cd0093897%3A0x2e6e0b7f8c84f6e5!2sLausanne%2C%20Suisse!3m2!1d46.5197!2d6.6323!5e0!3m2!1sfr!2sbe!4v1234567890"
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 15px;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+        <!-- Liste des villes principales -->
+        <div class="zones-list">
+            <h3>✅ Principales villes desservies :</h3>
+            <div class="cities-grid">
+                <!-- Valais -->
+                <div class="city canton-valais">
+                    <span class="flag">🏔️</span>
+                    <strong>Martigny</strong>
+                    <small>Valais</small>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Nettoyage de Bureaux</h3>
-                    <p>Espaces de travail propres et sains pour la productivité de vos équipes.</p>
+                <div class="city canton-valais">
+                    <span class="flag">🏔️</span>
+                    <strong>Sion</strong>
+                    <small>Valais</small>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Entretien de Logements</h3>
-                    <p>Ménage complet et régulier de votre domicile selon vos besoins.</p>
+                <div class="city canton-valais">
+                    <span class="flag">🏔️</span>
+                    <strong>Sierre</strong>
+                    <small>Valais</small>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🏗️</div>
-                    <h3>Fin de Chantier</h3>
-                    <p>Nettoyage approfondi après travaux pour une livraison impeccable.</p>
+                
+                <!-- Vaud -->
+                <div class="city canton-vaud">
+                    <span class="flag">🌊</span>
+                    <strong>Aigle</strong>
+                    <small>Vaud</small>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>État des Lieux</h3>
-                    <p>Nettoyage professionnel pour entrées et sorties de location.</p>
+                <div class="city canton-vaud">
+                    <span class="flag">🌊</span>
+                    <strong>Montreux</strong>
+                    <small>Vaud</small>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">⚕️</div>
-                    <h3>Cabinets Médicaux</h3>
-                    <p>Désinfection et entretien aux normes sanitaires strictes.</p>
+                <div class="city canton-vaud">
+                    <span class="flag">🌊</span>
+                    <strong>Vevey</strong>
+                    <small>Vaud</small>
+                </div>
+                <div class="city canton-vaud">
+                    <span class="flag">🌊</span>
+                    <strong>Lausanne</strong>
+                    <small>Vaud</small>
                 </div>
             </div>
-        </section>
-
-        <section id="avantages">
-            <h2>✨ Pourquoi Choisir Solaire Moon ?</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3>100% Sécurisé</h3>
-                    <p>Équipement professionnel et assurance complète pour tous nos services.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3>Éco-Responsable</h3>
-                    <p>Produits biodégradables et techniques douces respectueuses de l'environnement.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Service Rapide</h3>
-                    <p>Intervention rapide et résultats garantis pour tous types de prestations.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">💰</div>
-                    <h3>Tarifs Transparents</h3>
-                    <p>Devis gratuit et prix compétitifs sans frais cachés.</p>
-                </div>
+        </div>
+        
+        <!-- Cantons couverts -->
+        <div class="cantons-coverage">
+            <div class="canton-card valais">
+                <span class="canton-icon">🏔️</span>
+                <h4>Canton du Valais</h4>
+                <p>De Martigny à Sierre</p>
+                <span class="badge">Couverture complète</span>
             </div>
-        </section>
-
-        <section id="contact">
-            <h2>📞 Demandez Votre Devis Gratuit</h2>
             
-            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="form-group">
-                    <label for="name">Nom complet</label>
-                    <input type="text" id="name" name="name" required placeholder="Votre nom">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="votre@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Téléphone</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+41 XX XXX XX XX">
-                </div>
-
-                <div class="form-group">
-                    <label for="service">Service demandé</label>
-                    <select id="service" name="service" required>
-                        <option value="">-- Choisissez un service --</option>
-                        <option value="panneaux">Nettoyage de panneaux solaires</option>
-                        <option value="bureau">Nettoyage de bureaux</option>
-                        <option value="logement">Entretien de logement</option>
-                        <option value="chantier">Fin de chantier</option>
-                        <option value="etat">État des lieux</option>
-                        <option value="medical">Cabinet médical</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Détails de votre demande</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Décrivez-nous votre besoin..."></textarea>
-                </div>
-
-                <button type="submit">🌙 Envoyer ma demande</button>
-            </form>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1.2rem; color: #4DB8E8;">
-                    📞 <strong>Urgence ?</strong> Appelez-nous au : <span style="color: #F4B942;">+41 76 819 10 40</span>
-                </p>
-                <p style="margin-top: 1rem;">
-                    📧 Email : <span style="color: #4DB8E8;">info.solairemoon@gmail.com</span>
-                </p>
+            <div class="canton-card vaud">
+                <span class="canton-icon">🌊</span>
+                <h4>Canton de Vaud</h4>
+                <p>D'Aigle à Lausanne</p>
+                <span class="badge">Couverture complète</span>
             </div>
-        </section>
-    </div>
+        </div>
+        
+        <p class="coverage-note">
+            💡 <strong>Votre ville n'est pas listée ?</strong> Contactez-nous ! Nous intervenons dans toute la région entre Martigny et Lausanne.
+        </p>
+    </section>
 
-    <a href="https://wa.me/41768191040?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20un%20service%20de%20nettoyage" class="whatsapp-float" target="_blank">
-        💬
-    </a>
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="contact">
+        <h2>📞 Contactez-nous</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <div>
+                        <h3>Téléphone</h3>
+                        <p><a href="tel:+41123456789">+41 12 345 67 89</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:contact@solairemoon.ch">contact@solairemoon.ch</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <h3>Zone d'intervention</h3>
+                        <p>Valais & Vaud (Martigny - Lausanne)</p>
+                    </div>
+                </div>
+            </div>
 
+            <form class="contact-form">
+                <h3>Demande de devis gratuit</h3>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <input type="tel" placeholder="Votre téléphone" required>
+                <textarea placeholder="Décrivez votre projet..." rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>🌙 © 2024 Solaire Moon - Nettoyage Professionnel | Tous droits réservés</p>
-        <p style="margin-top: 0.5rem; color: #4DB8E8;">Services en Suisse | Devis gratuit</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🌙 Solaire Moon</h3>
+                <p>Votre partenaire pour l'entretien de panneaux solaires en Suisse romande.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#zone">Zone d'intervention</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📱 +41 12 345 67 89</p>
+                <p>✉️ contact@solairemoon.ch</p>
+                <p>📍 Valais & Vaud</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Solaire Moon. Tous droits réservés.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
