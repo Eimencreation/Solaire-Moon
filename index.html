@@ -12,7 +12,9 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>🌙 Solaire Moon</h1>
+                <img src="logo.png" alt="Logo Solaire Moon" class="logo-img">
+                <h1>Solaire Moon</h1>
+                <span class="swiss-badge">🇨🇭 Swiss Made</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
@@ -31,7 +33,10 @@
     <!-- HERO SECTION -->
     <section id="accueil" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">🌙 Solaire Moon</h1>
+            <div class="hero-logo">
+                <img src="logo.png" alt="Solaire Moon Logo" class="hero-logo-img">
+            </div>
+            <h1 class="hero-title">Solaire Moon</h1>
             <p class="hero-subtitle">Nettoyage Professionnel de Panneaux Solaires</p>
             <p class="hero-description">
                 Augmentez le rendement de vos panneaux solaires jusqu'à 30% grâce à notre service de nettoyage professionnel.
@@ -57,33 +62,31 @@
                 <div class="service-icon">☀️</div>
                 <h3>Nettoyage de Panneaux Solaires</h3>
                 <p>Nettoyage professionnel avec produits écologiques pour maximiser votre production d'énergie.</p>
-                <ul class="service-features">
-                    <li>✅ Augmentation du rendement jusqu'à 30%</li>
-                    <li>✅ Produits respectueux de l'environnement</li>
-                    <li>✅ Équipe qualifiée et assurée</li>
-                </ul>
             </div>
-
             <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3>Inspection et Maintenance</h3>
-                <p>Vérification complète de vos installations pour prévenir les pannes.</p>
-                <ul class="service-features">
-                    <li>✅ Détection des défauts</li>
-                    <li>✅ Rapport détaillé</li>
-                    <li>✅ Conseils personnalisés</li>
-                </ul>
+                <div class="service-icon">🏢</div>
+                <h3>Nettoyage de Bureaux</h3>
+                <p>Service complet pour maintenir vos espaces professionnels impeccables.</p>
             </div>
-
             <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3>Intervention Rapide</h3>
-                <p>Service professionnel dans les cantons de Vaud et Valais.</p>
-                <ul class="service-features">
-                    <li>✅ Devis gratuit sous 24h</li>
-                    <li>✅ Intervention flexible</li>
-                    <li>✅ Tarifs compétitifs</li>
-                </ul>
+                <div class="service-icon">🏠</div>
+                <h3>Nettoyage de Logements</h3>
+                <p>Nettoyage résidentiel adapté à vos besoins, fin de bail ou entretien régulier.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚧</div>
+                <h3>Nettoyage de Chantier</h3>
+                <p>Remise en état après travaux, évacuation des déchets et finitions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪟</div>
+                <h3>Nettoyage de Vitres</h3>
+                <p>Vitres étincelantes pour particuliers et professionnels, toutes hauteurs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏭</div>
+                <h3>Nettoyage Industriel</h3>
+                <p>Solutions adaptées pour entrepôts, usines et sites industriels.</p>
             </div>
         </div>
     </section>
@@ -91,9 +94,9 @@
     <!-- SECTION ZONE D'INTERVENTION -->
     <section id="zone" class="zone-intervention">
         <h2>🗺️ Notre Zone d'Intervention</h2>
-        <p class="zone-subtitle">Nous couvrons les cantons du Valais et de Vaud</p>
+        <p class="zone-subtitle">Nous couvrons les cantons du Valais et de Vaud 🇨🇭</p>
         
-        <!-- Carte Google Maps centrée sur la zone -->
+        <!-- Carte Google Maps -->
         <div class="map-container">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d177193.73089474!2d6.7824!3d46.2944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x478ea3fbd722c5b7%3A0x18bd6e7583e6b2f5!2sMartigny%2C%20Suisse!3m2!1d46.1024!2d7.0796!4m5!1s0x478c2e3cd0093897%3A0x2e6e0b7f8c84f6e5!2sLausanne%2C%20Suisse!3m2!1d46.5197!2d6.6323!5e0!3m2!1sfr!2sbe!4v1234567890"
@@ -106,71 +109,72 @@
             </iframe>
         </div>
         
-        <!-- Liste des villes principales -->
+        <!-- Liste des villes avec DRAPEAUX -->
         <div class="zones-list">
             <h3>✅ Principales villes desservies :</h3>
             <div class="cities-grid">
-                <!-- Valais -->
+                <!-- Valais (drapeau rouge et blanc) -->
                 <div class="city canton-valais">
-                    <span class="flag">🏔️</span>
+                    <span class="flag-canton">🏔️</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Flag_of_Canton_of_Valais.svg/200px-Flag_of_Canton_of_Valais.svg.png" alt="Drapeau Valais" class="canton-flag">
                     <strong>Martigny</strong>
                     <small>Valais</small>
                 </div>
                 <div class="city canton-valais">
-                    <span class="flag">🏔️</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Flag_of_Canton_of_Valais.svg/200px-Flag_of_Canton_of_Valais.svg.png" alt="Drapeau Valais" class="canton-flag">
                     <strong>Sion</strong>
                     <small>Valais</small>
                 </div>
                 <div class="city canton-valais">
-                    <span class="flag">🏔️</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Flag_of_Canton_of_Valais.svg/200px-Flag_of_Canton_of_Valais.svg.png" alt="Drapeau Valais" class="canton-flag">
                     <strong>Sierre</strong>
                     <small>Valais</small>
                 </div>
                 
-                <!-- Vaud -->
+                <!-- Vaud (drapeau vert et blanc) -->
                 <div class="city canton-vaud">
-                    <span class="flag">🌊</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Canton_of_Vaud.svg/200px-Flag_of_Canton_of_Vaud.svg.png" alt="Drapeau Vaud" class="canton-flag">
                     <strong>Aigle</strong>
                     <small>Vaud</small>
                 </div>
                 <div class="city canton-vaud">
-                    <span class="flag">🌊</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Canton_of_Vaud.svg/200px-Flag_of_Canton_of_Vaud.svg.png" alt="Drapeau Vaud" class="canton-flag">
                     <strong>Montreux</strong>
                     <small>Vaud</small>
                 </div>
                 <div class="city canton-vaud">
-                    <span class="flag">🌊</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Canton_of_Vaud.svg/200px-Flag_of_Canton_of_Vaud.svg.png" alt="Drapeau Vaud" class="canton-flag">
                     <strong>Vevey</strong>
                     <small>Vaud</small>
                 </div>
                 <div class="city canton-vaud">
-                    <span class="flag">🌊</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Canton_of_Vaud.svg/200px-Flag_of_Canton_of_Vaud.svg.png" alt="Drapeau Vaud" class="canton-flag">
                     <strong>Lausanne</strong>
                     <small>Vaud</small>
                 </div>
             </div>
         </div>
-        
-        <!-- Cantons couverts -->
-        <div class="cantons-coverage">
-            <div class="canton-card valais">
-                <span class="canton-icon">🏔️</span>
+
+        <!-- Cartes des cantons -->
+        <div class="cantons-cards">
+            <div class="canton-card canton-valais-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Flag_of_Canton_of_Valais.svg/300px-Flag_of_Canton_of_Valais.svg.png" alt="Valais" class="canton-flag-large">
                 <h4>Canton du Valais</h4>
-                <p>De Martigny à Sierre</p>
+                <p>Martigny, Sion, Sierre et environs</p>
                 <span class="badge">Couverture complète</span>
             </div>
-            
-            <div class="canton-card vaud">
-                <span class="canton-icon">🌊</span>
+            <div class="canton-card canton-vaud-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Canton_of_Vaud.svg/300px-Flag_of_Canton_of_Vaud.svg.png" alt="Vaud" class="canton-flag-large">
                 <h4>Canton de Vaud</h4>
-                <p>D'Aigle à Lausanne</p>
+                <p>Aigle, Montreux, Vevey, Lausanne</p>
                 <span class="badge">Couverture complète</span>
             </div>
         </div>
-        
-        <p class="coverage-note">
-            💡 <strong>Votre ville n'est pas listée ?</strong> Contactez-nous ! Nous intervenons dans toute la région entre Martigny et Lausanne.
-        </p>
+
+        <!-- Note -->
+        <div class="coverage-note">
+            <p>📍 <strong>De Martigny à Lausanne</strong> - Nous intervenons dans toute la région avec des équipes qualifiées et du matériel professionnel certifié 🇨🇭</p>
+        </div>
     </section>
 
     <!-- SECTION CONTACT -->
@@ -179,17 +183,17 @@
         <div class="contact-container">
             <div class="contact-info">
                 <div class="contact-item">
-                    <span class="contact-icon">📱</span>
+                    <span class="contact-icon">📧</span>
                     <div>
-                        <h3>Téléphone</h3>
-                        <p><a href="tel:+41123456789">+41 12 345 67 89</a></p>
+                        <h3>Email</h3>
+                        <a href="mailto:info.solairemoon@gmail.com">info.solairemoon@gmail.com</a>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">✉️</span>
+                    <span class="contact-icon">📱</span>
                     <div>
-                        <h3>Email</h3>
-                        <p><a href="mailto:contact@solairemoon.ch">contact@solairemoon.ch</a></p>
+                        <h3>Téléphone</h3>
+                        <a href="tel:+41XXXXXXXXX">+41 XX XXX XX XX</a>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -200,14 +204,21 @@
                     </div>
                 </div>
             </div>
-
             <form class="contact-form">
-                <h3>Demande de devis gratuit</h3>
                 <input type="text" placeholder="Votre nom" required>
                 <input type="email" placeholder="Votre email" required>
-                <input type="tel" placeholder="Votre téléphone" required>
-                <textarea placeholder="Décrivez votre projet..." rows="5" required></textarea>
-                <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+                <input type="tel" placeholder="Votre téléphone">
+                <select required>
+                    <option value="">Sélectionnez un service</option>
+                    <option value="panneaux">Nettoyage panneaux solaires</option>
+                    <option value="bureaux">Nettoyage bureaux</option>
+                    <option value="logements">Nettoyage logements</option>
+                    <option value="chantier">Nettoyage chantier</option>
+                    <option value="vitres">Nettoyage vitres</option>
+                    <option value="industriel">Nettoyage industriel</option>
+                </select>
+                <textarea placeholder="Votre message" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Envoyer la demande</button>
             </form>
         </div>
     </section>
@@ -215,12 +226,14 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>🌙 Solaire Moon</h3>
-                <p>Votre partenaire pour l'entretien de panneaux solaires en Suisse romande.</p>
+            <div class="footer-logo">
+                <img src="logo.png" alt="Solaire Moon" class="footer-logo-img">
+                <h3>Solaire Moon</h3>
+                <p class="footer-tagline">Nettoyage Professionnel</p>
+                <p class="swiss-made-footer">🇨🇭 Swiss Quality - Made in Switzerland</p>
             </div>
-            <div class="footer-section">
-                <h3>Liens rapides</h3>
+            <div class="footer-links">
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
@@ -228,18 +241,19 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>📱 +41 12 345 67 89</p>
-                <p>✉️ contact@solairemoon.ch</p>
-                <p>📍 Valais & Vaud</p>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📧 info.solairemoon@gmail.com</p>
+                <p>📱 +41 XX XXX XX XX</p>
+                <p>📍 Valais & Vaud, Suisse</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Solaire Moon. Tous droits réservés.</p>
+            <p>© 2024 Solaire Moon | Tous droits réservés | 🇨🇭 Entreprise Suisse</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
