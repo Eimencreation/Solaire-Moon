@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* STYLE DE LA BARRE DE NAVIGATION */
+        /* CONFIGURATION DE LA BARRE DE NAVIGATION */
         .navbar-custom {
             display: flex !important;
             justify-content: space-between;
             align-items: center;
-            background-color: #0d2340;
+            background-color: #0d2340; /* Bleu nuit */
             padding: 10px 40px;
             font-family: 'Montserrat', sans-serif;
             position: sticky;
@@ -24,14 +24,8 @@
             z-index: 1000;
         }
 
-        .nav-logo-block {
-            display: flex;
-            align-items: center;
-        }
-
-        /* Taille ajustée pour ton nouveau logo graphique */
-        .logo-img-nav {
-            height: 60px; 
+        .nav-logo-block img {
+            height: 60px; /* Taille pour ton nouveau logo */
             width: auto;
             display: block;
         }
@@ -43,43 +37,31 @@
 
         .nav-tab-item {
             display: flex;
-            flex-direction: column; 
-            align-items: center;    
+            flex-direction: column; /* Icône au-dessus du texte */
+            align-items: center;    /* Symétrie parfaite */
             text-decoration: none;
             color: white;
             transition: 0.3s;
         }
 
-        .nav-tab-item span:first-child {
-            font-size: 18px;
-        }
-
+        .nav-tab-item span:first-child { font-size: 18px; }
         .nav-tab-item span:last-child {
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
         }
 
-        .nav-tab-item:hover {
-            color: #4DB8E8;
-        }
-
-        /* BOUTON TÉLÉPHONE (Ligne unique) */
+        /* BOUTON TÉLÉPHONE (Ligne unique forcée) */
         .phone-nav-button {
             display: flex !important;
-            flex-direction: row !important; 
+            flex-direction: row !important; /* Force icône + texte côte à côte */
             align-items: center !important;
-            white-space: nowrap !important; 
-            border: 2px solid #e2b04a;
+            white-space: nowrap !important; /* Interdit le retour à la ligne */
+            border: 2px solid #e2b04a; /* Bordure dorée */
             border-radius: 50px;
             padding: 8px 20px;
             text-decoration: none;
             min-width: max-content;
-            transition: 0.3s;
-        }
-
-        .phone-nav-button:hover {
-            background-color: rgba(226, 176, 74, 0.1);
         }
 
         .phone-text-gold {
@@ -89,10 +71,16 @@
             margin-left: 10px;
         }
 
-        /* Ajustement logo Hero */
+        /* HERO SECTION */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
         .hero-logo-img {
-            max-width: 250px;
+            max-width: 300px;
             height: auto;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -102,7 +90,7 @@
         <nav class="navbar-custom">
             <div class="nav-logo-block">
                 <a href="#accueil">
-                    <img src="LOGO.jpeg" alt="Solaire Moon Logo" class="logo-img-nav">
+                    <img src="LOGO.jpeg" alt="Solaire Moon Logo">
                 </a>
             </div>
 
@@ -116,4 +104,21 @@
 
             <a href="tel:+41768191040" class="phone-nav-button">
                 <span style="color: #ff3366;">📞</span>
-                <span class="phone-text-gold">+
+                <span class="phone-text-gold">+41 76 819 10 40</span>
+            </a>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <img src="LOGO.jpeg" alt="Solaire Moon" class="hero-logo-img">
+            <p style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">NETTOYAGE</p>
+            <p style="max-width: 600px; margin: 20px auto; font-family: 'Montserrat', sans-serif;">
+                Nous réalisons tous types de prestations de nettoyage professionnel en Suisse.
+            </p>
+            <a href="#contact" style="background-color: #e2b04a; color: #0d2340; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">📞 Demandez un devis gratuit</a>
+        </div>
+    </section>
+
+    </body>
+</html>
