@@ -233,45 +233,42 @@
             border-radius: 2px;
         }
 
-        /* SERVICES GRID */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            border-color: var(--accent-gold);
-        }
-
-        .service-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.5em;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-        }
+               <!-- SERVICES -->
+        <section id="services">
+            <h2>Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400" alt="Nettoyage de bureaux" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+                    <h3>Nettoyage de bureaux</h3>
+                    <p>Espaces de travail propres et accueillants pour vos équipes et clients.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=400" alt="Nettoyage résidentiel" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+                    <h3>Nettoyage résidentiel</h3>
+                    <p>Maisons et appartements impeccables avec des produits respectueux.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400" alt="Nettoyage après chantier" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+                    <h3>Nettoyage après chantier</h3>
+                    <p>Élimination complète des débris et poussières de construction.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400" alt="Nettoyage de vitres" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+                    <h3>Nettoyage de vitres</h3>
+                    <p>Vitres éclatantes pour une luminosité maximale.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=400" alt="Nettoyage panneaux solaires" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+                    <h3>Nettoyage panneaux solaires</h3>
+                    <p>Optimisez le rendement de vos installations photovoltaïques.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400" alt="Services sur mesure" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+                    <h3>Services sur mesure</h3>
+                    <p>Solutions personnalisées adaptées à vos besoins spécifiques.</p>
+                </div>
+            </div>
+        </section>
 
         /* CONTACT FORM */
         .contact-form {
