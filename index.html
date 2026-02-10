@@ -434,18 +434,7 @@
             </a>
         </div>
     </nav>
-    <section id="zones" style="background: url('images/montagne.jpg') center/cover no-repeat; position: relative; color: white;">
-    <!-- Overlay bleu pour garder la lisibilité -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(59, 130, 246, 0.85) 100%); z-index: 1;"></div>
-    
-    <!-- Tout ton contenu existant reste ici, entoure-le juste avec ce div -->
-    <div style="position: relative; z-index: 2;">
-        
-        <!-- ICI TU GARDES TOUT CE QUI EST DÉJÀ LÀ -->
-        <!-- Ne supprime RIEN -->
-        
-    </div>
-</section>
+
 
 
     <!-- HERO SECTION -->
@@ -505,39 +494,47 @@
             </div>
         </section>
 
-        <!-- ZONES -->
-        <section id="zones" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white;">
-            <h2 style="color: white;">Nos Zones d'Intervention</h2>
-            <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <!-- VAUD -->
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
-                    <div style="background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VD</div>
-                    <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton de Vaud</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Lausanne</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Montreux</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Vevey</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Nyon</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Yverdon</span>
-                    </div>
-                    <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
-                    <a href="#contact" style="display: inline-block; background: #10b981; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
+       <!-- ZONES -->
+<section id="zones" style="background: url('images/montagne.jpg') center/cover no-repeat; position: relative; color: white; padding: 80px 20px;">
+    
+    <!-- Overlay bleu semi-transparent pour garder la lisibilité -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(59, 130, 246, 0.85) 100%); z-index: 1;"></div>
+    
+    <!-- Contenu au-dessus de l'image -->
+    <div style="position: relative; z-index: 2;">
+        <h2 style="color: white;">Nos Zones d'Intervention</h2>
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- VAUD -->
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
+                <div style="background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VD</div>
+                <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton de Vaud</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
+                    <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Lausanne</span>
+                    <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Montreux</span>
+                    <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Vevey</span>
+                    <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Nyon</span>
+                    <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Yverdon</span>
                 </div>
-                
-                <!-- VALAIS -->
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
-                    <div style="background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VS</div>
-                    <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton du Valais</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Martigny</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Sion</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Sierre</span>
-                    </div>
-                    <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
-                    <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
-                </div>
+                <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
+                <a href="#contact" style="display: inline-block; background: #10b981; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
             </div>
-        </section>
+            
+            <!-- VALAIS -->
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
+                <div style="background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VS</div>
+                <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton du Valais</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
+                    <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Martigny</span>
+                    <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Sion</span>
+                    <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Sierre</span>
+                </div>
+                <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
+                <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <!-- CONTACT -->
         <section id="contact">
