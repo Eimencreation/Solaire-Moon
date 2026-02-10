@@ -18,7 +18,6 @@
             --light-blue: #4DB8E8;
             --text-light: #ffffff;
             --text-dark: #333333;
-            --swiss-red: #FF0000;
         }
 
         * {
@@ -70,41 +69,6 @@
             color: var(--accent-gold);
             font-size: 22px;
             margin: 0;
-        }
-
-        /* DRAPEAU SUISSE EN ENTÊTE */
-        .swiss-flag-nav {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .swiss-flag-nav:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-        }
-
-        .swiss-flag-icon {
-            font-size: 24px;
-            animation: wave 2s ease-in-out infinite;
-        }
-
-        @keyframes wave {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-10deg); }
-            75% { transform: rotate(10deg); }
-        }
-
-        .swiss-text {
-            color: white;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .nav-links-container {
@@ -403,50 +367,11 @@
             background: var(--primary-blue);
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
         }
 
         footer p {
             margin: 10px 0;
-        }
-
-        /* BADGE SWISS MADE EN FOOTER */
-        .swiss-made-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, var(--swiss-red), #cc0000);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1.1em;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .swiss-made-badge .flag {
-            font-size: 28px;
-        }
-
-        .swiss-quality-text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-            margin-top: 15px;
-        }
-
-        .swiss-quality-label {
-            font-size: 0.9em;
-            opacity: 0.8;
-            font-weight: 400;
         }
 
         /* RESPONSIVE */
@@ -474,10 +399,6 @@
                 justify-content: center;
             }
 
-            .swiss-flag-nav {
-                margin-top: 10px;
-            }
-
             .hero-title {
                 font-size: 2em;
             }
@@ -502,11 +423,6 @@
         <div class="nav-logo-block">
             <img src="images/logo.png" alt="Logo Solaire Moon" class="logo-img-small">
             <h1 class="logo-text-nav">Solaire Moon</h1>
-            <!-- DRAPEAU SUISSE À CÔTÉ DU LOGO -->
-            <div class="swiss-flag-nav">
-                <span class="swiss-flag-icon">🇨🇭</span>
-                <span class="swiss-text">Suisse</span>
-            </div>
         </div>
         <div class="nav-links-container">
             <a href="#accueil" class="nav-tab-item">Accueil</a>
@@ -542,19 +458,19 @@
                         <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=350&fit=crop&q=80" alt="Nettoyage fin de chantier">
                         <div class="prestation-label">Fin de Chantier</div>
                     </div>
-
+                    
                     <!-- Image 2 : Panneaux Solaires -->
                     <div class="prestation-item">
                         <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=350&fit=crop" alt="Panneaux solaires">
                         <div class="prestation-label">Panneaux Solaires</div>
                     </div>
-
+                    
                     <!-- Image 3 : Bureaux -->
                     <div class="prestation-item">
                         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=350&fit=crop" alt="Bureaux">
                         <div class="prestation-label">Bureaux Professionnels</div>
                     </div>
-
+                    
                     <!-- Image 4 : TA PHOTO DE VITRES ! -->
                     <div class="prestation-item">
                         <img src="https://raw.githubusercontent.com/EimenCreation/Solaire-Moon/main/nettoyer_vitre.jpg" alt="Nettoyage de vitres">
@@ -594,7 +510,7 @@
                     <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
                     <a href="#contact" style="display: inline-block; background: #10b981; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
                 </div>
-
+                
                 <!-- VALAIS -->
                 <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
                     <div style="background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VS</div>
@@ -633,15 +549,6 @@
         <p>&copy; 2024 Solaire Moon - Nettoyage Professionnel en Suisse</p>
         <p>📞 +41 76 819 10 40 | ✉️ info.solairemoon@gmail.com</p>
         <p>🇨🇭 Cantons de Vaud et Valais</p>
-        
-        <!-- BADGE SWISS MADE -->
-        <div class="swiss-quality-text">
-            <div class="swiss-made-badge">
-                <span class="flag">🇨🇭</span>
-                <span>SWISS QUALITY</span>
-            </div>
-            <span class="swiss-quality-label">Entreprise 100% Suisse | Qualité Garantie</span>
-        </div>
     </footer>
 </body>
 </html>
