@@ -55,20 +55,12 @@
         .nav-logo-block {
             display: flex;
             align-items: center;
-            gap: 15px;
             height: 100%;
         }
 
         .logo-img-small {
-            height: 45px;
+            height: 50px;
             width: auto;
-        }
-
-        .logo-text-nav {
-            font-family: 'Allura', cursive;
-            color: var(--accent-gold);
-            font-size: 22px;
-            margin: 0;
         }
 
         .nav-links-container {
@@ -151,14 +143,127 @@
             padding: 80px 20px;
         }
 
+        /* BUBBLES ANIMATION */
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: rise 15s infinite ease-in;
+        }
+
+        .bubble:nth-child(1) {
+            width: 20px;
+            height: 20px;
+            left: 10%;
+            animation-duration: 8s;
+            animation-delay: 0s;
+        }
+
+        .bubble:nth-child(2) {
+            width: 30px;
+            height: 30px;
+            left: 20%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 25px;
+            height: 25px;
+            left: 35%;
+            animation-duration: 9s;
+            animation-delay: 1s;
+        }
+
+        .bubble:nth-child(4) {
+            width: 35px;
+            height: 35px;
+            left: 50%;
+            animation-duration: 12s;
+            animation-delay: 3s;
+        }
+
+        .bubble:nth-child(5) {
+            width: 22px;
+            height: 22px;
+            left: 65%;
+            animation-duration: 11s;
+            animation-delay: 0.5s;
+        }
+
+        .bubble:nth-child(6) {
+            width: 28px;
+            height: 28px;
+            left: 75%;
+            animation-duration: 9s;
+            animation-delay: 4s;
+        }
+
+        .bubble:nth-child(7) {
+            width: 32px;
+            height: 32px;
+            left: 85%;
+            animation-duration: 10s;
+            animation-delay: 1.5s;
+        }
+
+        .bubble:nth-child(8) {
+            width: 18px;
+            height: 18px;
+            left: 90%;
+            animation-duration: 13s;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateX(30px) scale(1.1);
+            }
+            100% {
+                bottom: 110%;
+                transform: translateX(-30px) scale(0.8);
+                opacity: 0;
+            }
+        }
+
         .hero-content {
             max-width: 900px;
             z-index: 2;
             animation: fadeInUp 1s ease;
         }
 
+        .hero-brand-name {
+            font-family: 'Allura', cursive;
+            color: var(--accent-gold);
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
         .hero-title {
-            font-size: 3.5em;
+            font-size: 2.5em;
             font-weight: 700;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
@@ -350,16 +455,12 @@
             border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
             font-size: 1em;
-            transition: border-color 0.3s;
+            transition: border 0.3s;
         }
 
         input:focus, textarea:focus {
             outline: none;
             border-color: var(--accent-gold);
-        }
-
-        textarea {
-            resize: vertical;
         }
 
         /* FOOTER */
@@ -371,40 +472,13 @@
         }
 
         footer p {
-            margin: 10px 0;
+            margin: 5px 0;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 1024px) {
-            .prestations-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         @media (max-width: 768px) {
-            .navbar-custom {
-                flex-direction: column;
-                height: auto;
-                padding: 15px 20px;
-            }
-
-            .nav-links-container {
-                flex-direction: column;
-                gap: 15px;
-                width: 100%;
-            }
-
-            .nav-tab-item {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .hero-title {
-                font-size: 2em;
-            }
-
             .prestations-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .prestations-list ul {
@@ -414,106 +488,112 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+
+            .hero-brand-name {
+                font-size: 2.5em;
+            }
+
+            .hero-title {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION -->
     <nav class="navbar-custom">
         <div class="nav-logo-block">
-            <img src="images/logo.png" alt="Logo Solaire Moon" class="logo-img-small">
-            <h1 class="logo-text-nav">Solaire Moon</h1>
+            <img src="logo.png" alt="Logo Solaire Moon" class="logo-img-small">
         </div>
         <div class="nav-links-container">
-            <a href="#accueil" class="nav-tab-item">Accueil</a>
             <a href="#services" class="nav-tab-item">Services</a>
-            <a href="#zones" class="nav-tab-item">Zones d'intervention</a>
+            <a href="#apropos" class="nav-tab-item">À propos</a>
+            <a href="#zones" class="nav-tab-item">Zones</a>
             <a href="#contact" class="nav-tab-item phone-nav-button">
-                <span>📞</span>
-                <span class="phone-text-gold">+41 76 819 10 40</span>
+                📞 <span class="phone-text-gold">+41 76 819 10 40</span>
             </a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Un coup de balais près de chez vous</h1>
-            <p class="hero-subtitle">Spécialistes du nettoyage dans les cantons de Vaud et Valais</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Demander un devis gratuit</a>
-                <a href="#services" class="btn-secondary">Nos services</a>
-            </div>
-        </div>
-    </section>
-
     <main>
-        <!-- SERVICES SECTION -->
+        <!-- HERO -->
+        <section class="hero">
+            <div class="bubbles">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-brand-name">Solaire Moon</h1>
+                <h2 class="hero-title">Un coup de balais près de chez vous</h2>
+                <p class="hero-subtitle">Cantons de Vaud et Valais</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Demander un devis gratuit</a>
+                    <a href="#services" class="btn-secondary">Découvrir nos services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
         <section id="services">
-            <h2>Nos Services</h2>
+            <h2>Nos Prestations</h2>
             <div class="services-container">
                 <div class="prestations-grid">
-                    <!-- Image 1 : Fin de Chantier -->
                     <div class="prestation-item">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=350&fit=crop&q=80" alt="Nettoyage fin de chantier">
-                        <div class="prestation-label">Fin de Chantier</div>
+                        <img src="1.png" alt="Nettoyage de vitres">
+                        <div class="prestation-label">Nettoyage de vitres</div>
                     </div>
-                    
-                    <!-- Image 2 : Panneaux Solaires -->
                     <div class="prestation-item">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=350&fit=crop" alt="Panneaux solaires">
-                        <div class="prestation-label">Panneaux Solaires</div>
+                        <img src="2.png" alt="Nettoyage de bureaux">
+                        <div class="prestation-label">Nettoyage de bureaux</div>
                     </div>
-                    
-                    <!-- Image 3 : Bureaux -->
                     <div class="prestation-item">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=350&fit=crop" alt="Bureaux">
-                        <div class="prestation-label">Bureaux Professionnels</div>
+                        <img src="3.png" alt="Nettoyage de chantier">
+                        <div class="prestation-label">Nettoyage de chantier</div>
                     </div>
-                    
-                    <!-- Image 4 : TA PHOTO DE VITRES ! -->
                     <div class="prestation-item">
-                        <img src="https://raw.githubusercontent.com/EimenCreation/Solaire-Moon/main/nettoyer_vitre.jpg" alt="Nettoyage de vitres">
-                        <div class="prestation-label">Nettoyage de Vitres</div>
+                        <img src="4.png" alt="Entretien des locaux">
+                        <div class="prestation-label">Entretien des locaux</div>
                     </div>
                 </div>
 
-                <!-- LISTE 2 COLONNES -->
                 <div class="prestations-list">
                     <ul>
-                        <li>✓ Nettoyage fin de chantier</li>
-                        <li>✓ Nettoyage de panneaux solaires</li>
-                        <li>✓ Nettoyage pour état des lieux</li>
-                        <li>✓ Nettoyage de vitres</li>
-                        <li>✓ Nettoyage de bureaux et locaux</li>
-                        <li>✓ Nettoyage après événement</li>
+                        <li>✨ Nettoyage de vitres professionnel</li>
+                        <li>🏢 Entretien régulier de bureaux</li>
+                        <li>🏗️ Nettoyage après chantier</li>
+                        <li>🏠 Nettoyage de locaux commerciaux</li>
+                        <li>🧹 Entretien de copropriétés</li>
+                        <li>🚪 Nettoyage de halls d'entrée</li>
+                        <li>🪜 Nettoyage en hauteur</li>
+                        <li>💼 Solutions sur mesure</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- ZONES -->
-        <section id="zones" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white;">
-            <h2 style="color: white;">Nos Zones d'Intervention</h2>
-            <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <!-- VAUD -->
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
-                    <div style="background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VD</div>
+        <!-- ZONES D'INTERVENTION -->
+        <section id="zones" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 80px 20px;">
+            <h2 style="color: white;">Zones d'intervention</h2>
+            <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px);">
+                    <div style="background: #3b82f6; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VD</div>
                     <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton de Vaud</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Lausanne</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Montreux</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Vevey</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Nyon</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #047857; font-weight: 500;">Yverdon</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Lausanne</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Montreux</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Vevey</span>
+                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Aigle</span>
                     </div>
                     <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
-                    <a href="#contact" style="display: inline-block; background: #10b981; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
+                    <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
                 </div>
-                
-                <!-- VALAIS -->
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; text-align: center;">
-                    <div style="background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VS</div>
+                <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px);">
+                    <div style="background: #dc2626; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VS</div>
                     <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton du Valais</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
                         <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Martigny</span>
