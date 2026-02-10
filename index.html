@@ -475,6 +475,91 @@
             margin: 5px 0;
         }
 
+        /* ZONES D'INTERVENTION STYLES */
+        .zones-section {
+            background: linear-gradient(135deg, var(--light-blue) 0%, #3a9bc9 100%);
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .zones-section h2 {
+            color: white;
+        }
+
+        .zones-section h2::after {
+            background: white;
+        }
+
+        .zones-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .zone-card {
+            text-align: center;
+            background: rgba(255,255,255,0.15);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .zone-badge {
+            background: white;
+            color: var(--light-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .zone-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .cities-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .city-tag {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        .zone-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .zone-cta {
+            display: inline-block;
+            background: white;
+            color: var(--light-blue);
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .zone-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .prestations-grid {
@@ -495,6 +580,10 @@
 
             .hero-title {
                 font-size: 1.8em;
+            }
+
+            .zones-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -544,19 +633,19 @@
             <div class="services-container">
                 <div class="prestations-grid">
                     <div class="prestation-item">
-                        <img src="1.png" alt="Nettoyage de vitres">
+                        <img src="vitres.jpg" alt="Nettoyage de vitres">
                         <div class="prestation-label">Nettoyage de vitres</div>
                     </div>
                     <div class="prestation-item">
-                        <img src="2.png" alt="Nettoyage de bureaux">
+                        <img src="bureaux.jpg" alt="Nettoyage de bureaux">
                         <div class="prestation-label">Nettoyage de bureaux</div>
                     </div>
                     <div class="prestation-item">
-                        <img src="3.png" alt="Nettoyage de chantier">
+                        <img src="chantier.jpg" alt="Nettoyage de chantier">
                         <div class="prestation-label">Nettoyage de chantier</div>
                     </div>
                     <div class="prestation-item">
-                        <img src="4.png" alt="Entretien des locaux">
+                        <img src="locaux.jpg" alt="Entretien des locaux">
                         <div class="prestation-label">Entretien des locaux</div>
                     </div>
                 </div>
@@ -577,31 +666,31 @@
         </section>
 
         <!-- ZONES D'INTERVENTION -->
-        <section id="zones" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 80px 20px;">
-            <h2 style="color: white;">Zones d'intervention</h2>
-            <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px);">
-                    <div style="background: #3b82f6; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VD</div>
-                    <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton de Vaud</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Lausanne</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Montreux</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Vevey</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Aigle</span>
+        <section id="zones" class="zones-section">
+            <h2>Zones d'intervention</h2>
+            <div class="zones-grid">
+                <div class="zone-card">
+                    <div class="zone-badge">VD</div>
+                    <h3>Canton de Vaud</h3>
+                    <div class="cities-tags">
+                        <span class="city-tag">Lausanne</span>
+                        <span class="city-tag">Montreux</span>
+                        <span class="city-tag">Vevey</span>
+                        <span class="city-tag">Aigle</span>
                     </div>
-                    <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
-                    <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
+                    <p>+ toutes les communes du canton</p>
+                    <a href="#contact" class="zone-cta">Demander un devis</a>
                 </div>
-                <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px);">
-                    <div style="background: #dc2626; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 20px;">VS</div>
-                    <h3 style="font-size: 1.8em; margin-bottom: 20px;">Canton du Valais</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Martigny</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Sion</span>
-                        <span style="background: white; padding: 8px 15px; border-radius: 20px; color: #dc2626; font-weight: 500;">Sierre</span>
+                <div class="zone-card">
+                    <div class="zone-badge">VS</div>
+                    <h3>Canton du Valais</h3>
+                    <div class="cities-tags">
+                        <span class="city-tag">Martigny</span>
+                        <span class="city-tag">Sion</span>
+                        <span class="city-tag">Sierre</span>
                     </div>
-                    <p style="font-style: italic; margin-bottom: 20px;">+ toutes les communes du canton</p>
-                    <a href="#contact" style="display: inline-block; background: #ef4444; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">Demander un devis</a>
+                    <p>+ toutes les communes du canton</p>
+                    <a href="#contact" class="zone-cta">Demander un devis</a>
                 </div>
             </div>
         </section>
